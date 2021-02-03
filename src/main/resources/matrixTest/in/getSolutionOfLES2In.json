@@ -1,0 +1,12 @@
+{
+  "mainMatrix":[
+    [{"numerator":1},{"numerator":2}, {"numerator":-1}, {"numerator":1}, {"numerator":1}],
+    [{"numerator":2},{"numerator":4}, {"numerator":-4}, {"numerator":3}, {"numerator":1}],
+    [{"numerator":1},{"numerator":2}, {"numerator":1}, {"numerator":2}, {"numerator":3}]
+  ],
+  "augmentedMatrix":[
+    [{"numerator": 1}],
+    [{"numerator": 0}],
+    [{"numerator": 2}]
+  ]
+}

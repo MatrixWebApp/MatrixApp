@@ -1,0 +1,34 @@
+{
+  "in":{
+    "main": [
+    [
+      {
+        "numerator": 3,
+        "denominator": 1
+      },
+      {
+        "numerator": 5,
+        "denominator": 1
+      }
+    ],
+    [
+      {
+        "numerator": 1,
+        "denominator": 1
+      },
+      {
+        "numerator": 2,
+        "denominator": 1
+      }
+    ]
+  ]
+  },
+
+"out": {
+  "main":[
+    [{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
+    [{"numerator": 3,"denominator": 1},{"numerator": 5,"denominator": 1}]
+  ]
+}
+
+}

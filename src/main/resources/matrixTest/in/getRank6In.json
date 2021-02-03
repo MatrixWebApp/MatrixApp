@@ -1,0 +1,9 @@
+{
+  "mainMatrix":[
+    [{"numerator":0},{"numerator":0}, {"numerator":0}],
+    [{"numerator":2},{"numerator":4}, {"numerator":-1}],
+    [{"numerator":-2},{"numerator":-4}, {"numerator":1}],
+    [{"numerator":7},{"numerator":13}, {"numerator":2}],
+    [{"numerator":14},{"numerator":26}, {"numerator":4}]
+  ]
+}

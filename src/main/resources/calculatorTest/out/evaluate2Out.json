@@ -1,0 +1,9 @@
+{
+  "mainMatrix":[
+    [{"numerator": 2160,"denominator": 1079},{"numerator": -1565,"denominator": 1079},{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
+    [{"numerator": 5766,"denominator": 1079},{"numerator": -3833,"denominator": 1079},{"numerator": 2,"denominator": 1},{"numerator": 4,"denominator": 1}],
+    [{"numerator": 38694,"denominator": 1079},{"numerator": -46633,"denominator": 1079},{"numerator": 46,"denominator": 1},{"numerator": 8,"denominator": 1}],
+    [{"numerator": 3624,"denominator": 1079},{"numerator": -2326,"denominator": 1079},{"numerator": 1,"denominator": 1},{"numerator": 1,"denominator": 1}]
+
+  ]
+}
