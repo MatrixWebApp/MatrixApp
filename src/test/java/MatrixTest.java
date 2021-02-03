@@ -11,9 +11,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 class MatrixTest {
@@ -25,7 +26,7 @@ class MatrixTest {
     @BeforeEach
     public void setup(){
         // ./src/main/resources/matrixTest
-        path = Paths.get("." ,"src","main","resources","matrixTest", "test.json");
+        path = Paths.get("." ,"src","main","resources","test", "matrix.json");
         testJson = getJson(path);
 
     }
@@ -135,7 +136,7 @@ class MatrixTest {
     }
 
     @Test
-    public void determinantOfTriangleMatrix1() {
+    public void test8() {
         JsonElement json = testJson.getAsJsonObject().get("determinantOfTriangleMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -146,7 +147,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getInverseMatrix1() {
+    public void test9() {
         JsonElement json =  testJson.getAsJsonObject().get("getInverseMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -158,7 +159,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getInverseMatrix2() {
+    public void test10() {
         JsonElement json =  testJson.getAsJsonObject().get("getInverseMatrix2");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -171,7 +172,7 @@ class MatrixTest {
     }
 //
     @Test
-    public void getInverseMatrix3() {
+    public void test11() {
         JsonElement json =  testJson.getAsJsonObject().get("getInverseMatrix2");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -184,287 +185,385 @@ class MatrixTest {
     }
 
 //
+    @Test
+    public void add1() {
+        JsonElement json =  testJson.getAsJsonObject().get("add1");
+        List<JsonElement> in = Arrays.asList(
+                json.getAsJsonObject().get("in").getAsJsonArray().get(0).getAsJsonObject(),
+                json.getAsJsonObject().get("in").getAsJsonArray().get(1).getAsJsonObject()
+        );
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser
+                .matrixFromJson(in.get(0))
+                .add(GsonParser.matrixFromJson(in.get(1)));
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void mlp1() {
+        JsonElement json =  testJson.getAsJsonObject().get("mlp1");
+        List<JsonElement> in = Arrays.asList(
+                json.getAsJsonObject().get("in").getAsJsonArray().get(0).getAsJsonObject(),
+                json.getAsJsonObject().get("in").getAsJsonArray().get(1).getAsJsonObject()
+        );
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser
+                .matrixFromJson(in.get(0))
+                .mlp(GsonParser.matrixFromJson(in.get(1)));
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void mlp2() {
+        JsonElement json =  testJson.getAsJsonObject().get("mlp2");
+        List<JsonElement> in = Arrays.asList(
+                json.getAsJsonObject().get("in").getAsJsonArray().get(0).getAsJsonObject(),
+                json.getAsJsonObject().get("in").getAsJsonArray().get(1).getAsJsonObject()
+        );
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser
+                .matrixFromJson(in.get(0))
+                .mlp(GsonParser.matrixFromJson(in.get(1)));
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+
+
+    @Test
+    public void toIMatrix1(){
+        JsonElement json =  testJson.getAsJsonObject().get("toIMatrix1");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).toIMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void toIMatrix2(){
+        JsonElement json =  testJson.getAsJsonObject().get("toIMatrix2");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).toIMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void toIMatrix3(){
+        JsonElement json =  testJson.getAsJsonObject().get("toIMatrix3");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).toIMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void toIMatrix4(){
+        JsonElement json =  testJson.getAsJsonObject().get("toIMatrix4");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).toIMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void toIMatrix5(){
+        JsonElement json =  testJson.getAsJsonObject().get("toIMatrix5");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).toIMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void rank1(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank1");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 2;
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void rank2(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank2");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 4;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getRank3(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank3");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 3;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getRank4(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank4");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 3;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getRank5(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank5");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 3;
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void getRank6(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank6");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 2;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getRank7(){
+        JsonElement json =  testJson.getAsJsonObject().get("rank7");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        int actual = GsonParser.matrixFromJson(in).getRank().getNumerator();
+        int expected = 3;
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getDeterminantByTriangleMatrix1(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix1");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Rational expected = new Rational(0);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getDeterminantByTriangleMatrix2(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix2");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+
+        Rational expected = new Rational(-1034);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getDeterminantByTriangleMatrix3(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix3");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Rational expected = new Rational(-42);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getDeterminantByTriangleMatrix4(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix4");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Rational expected = new Rational(24);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void getDeterminantByTriangleMatrix5(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix5");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Matrix matrix = GsonParser.matrixFromJson(in);
+        assertThrows(IllegalArgumentException.class, ()-> matrix.getDeterminantByTriangleMatrix());
+    }
+
+    @Test
+    public void getDeterminantByTriangleMatrix6(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix6");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Rational expected = new Rational(0);
+        assertEquals(expected, actual);
+    }
+
 //    @Test
-//    public void add1() {
-//        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".1"))
-//                                        .add(GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".2")));
+//    public void getSolutionOfLES1(){
+//        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix6");
+//        JsonElement in = json.getAsJsonObject().get("in");
 //
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
+//        String actual = GsonParser.matrixFromJson(in).getSolutionOfLES().toString();
+//        String expected = "Independent variables:\n" +
+//                "X1 = (-3/2)\n" +
+//                "X2 = (1/1)\n" +
+//                "X3 = (1/2)\n" +
+//                "\n" +
+//                "Dependent variables:\n";
 //
 //        assertEquals(expected, actual);
-//
 //    }
 //
 //    @Test
-//    public void mlp1() {
-//        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".1"))
-//                .mlp(GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".2")));
+//    public void getSolutionOfLES2(){
 //
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
+//        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()))
+//                                        .getSolutionOfLES()
+//                                        .toString();
+//        String exprected = "Independent variables:\n" +
+//                "X1 = (9/4) + (-2/1)*X2 + (-5/4)*X5\n" +
+//                "X3 = (3/4) + (-3/4)*X5\n" +
+//                "X4 = (-1/2) + (-1/2)*X5\n" +
+//                "\n" +
+//                "Dependent variables:\n" +
+//                "X2 = a1\n" +
+//                "X5 = a2\n";
+//        assertEquals(exprected, actual);
 //
+//    }
+
+
+
+    @Test
+    public void getTransposeMatrix1(){
+        JsonElement json =  testJson.getAsJsonObject().get("transposeMatrix1");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).getTransposeMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void inverseMatrix1(){
+        JsonElement json =  testJson.getAsJsonObject().get("inverseMatrix1");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).getInverseMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void inverseMatrix2(){
+        JsonElement json =  testJson.getAsJsonObject().get("inverseMatrix2");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).getInverseMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void inverseMatrix3(){
+        JsonElement json =  testJson.getAsJsonObject().get("inverseMatrix3");
+        JsonElement in = json.getAsJsonObject().get("in");
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Matrix actual = GsonParser.matrixFromJson(in).getInverseMatrix();
+        Matrix expected = GsonParser.matrixFromJson(out);
+
+        assertEquals(expected, actual);
+    }
+//    @Test
+//    @Test
+//    @Test
+//    public void getDecompositionOfVectorsByLinearIndependent1(){
+//        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDecompositionOfVectorsByLinearIndependent();
+//        String expected = "Basis:\n" +
+//                "vector2\n" +
+//                "vector4\n" +
+//                "\n" +
+//                "Decomposition by basis:\n" +
+//                "vector1 = (0/1)*vector2 + (0/1)*vector4\n" +
+//                "vector2 = (1/1)*vector2 + (0/1)*vector4\n" +
+//                "vector3 = (-1/1)*vector2 + (0/1)*vector4\n" +
+//                "vector4 = (0/1)*vector2 + (1/1)*vector4\n" +
+//                "vector5 = (0/1)*vector2 + (2/1)*vector4\n";
 //        assertEquals(expected, actual);
 //    }
 //
-////
-////    @Test
-////    public void mlp2() {
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".1"))
-////                                        .mlp(GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".2")));
-////
-////        System.out.println(actual.add(actual).toString());
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////
-////        assertEquals(expected, actual);
-////
-////    }
-////
-////    @Test
-////    public void mlp3() {
-////        Matrix a = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".1"));
-////        Matrix b = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()+".2"));
-////
-////        System.out.println(a);
-////        System.out.println(a.toIMatrix());
-////        System.out.println(a.getDecompositionOfVectorsByLinearIndependent());
-////
-////
-////        //assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void toIMatrix1(){
-////
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).toIMatrix();
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void toIMatrix2(){
-////
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).toIMatrix();
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void toIMatrix3(){
-////
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).toIMatrix();
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void toIMatrix4(){
-////
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).toIMatrix();
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void toIMatrix5(){
-////
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).toIMatrix();
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void getRank1(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 2;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void getRank2(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 4;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getRank3(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 3;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getRank4(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 3;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getRank5(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 3;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void getRank6(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 2;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getRank7(){
-////
-////        int actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getRank().getNumerator();
-////        int expected = 3;
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getDeterminantByTriangleMatrix1(){
-////
-////        Rational actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDeterminantByTriangleMatrix();
-////        Rational expected = new Rational(0);
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getDeterminantByTriangleMatrix2(){
-////
-////        Rational actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDeterminantByTriangleMatrix();
-////        Rational expected = new Rational(-1034);
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getDeterminantByTriangleMatrix3(){
-////
-////        Rational actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDeterminantByTriangleMatrix();
-////        Rational expected = new Rational(-42);
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getDeterminantByTriangleMatrix4(){
-////
-////        Rational actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDeterminantByTriangleMatrix();
-////        Rational expected = new Rational(24);
-////        assertEquals(expected, actual);
-////    }
-////
-////
-////    @Test
-////    public void getDeterminantByTriangleMatrix5(){
-////        Matrix matrix = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()));
-////        assertThrows(IllegalArgumentException.class, ()-> matrix.getDeterminantByTriangleMatrix());
-////    }
-////
-////    @Test
-////    public void getDeterminantByTriangleMatrix6(){
-////        Rational actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDeterminantByTriangleMatrix();
-////        Rational expected = new Rational(0);
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getSolutionOfLES1(){
-////
-////        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getSolutionOfLES().toString();
-////        String expected = "Independent variables:\n" +
-////                "X1 = (-3/2)\n" +
-////                "X2 = (1/1)\n" +
-////                "X3 = (1/2)\n" +
-////                "\n" +
-////                "Dependent variables:\n";
-////
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getSolutionOfLES2(){
-////
-////        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName()))
-////                                        .getSolutionOfLES()
-////                                        .toString();
-////        String exprected = "Independent variables:\n" +
-////                "X1 = (9/4) + (-2/1)*X2 + (-5/4)*X5\n" +
-////                "X3 = (3/4) + (-3/4)*X5\n" +
-////                "X4 = (-1/2) + (-1/2)*X5\n" +
-////                "\n" +
-////                "Dependent variables:\n" +
-////                "X2 = a1\n" +
-////                "X5 = a2\n";
-////        assertEquals(exprected, actual);
-////
-////    }
-////
-////
-////
-////    @Test
-////    public void getTransposeMatrix1(){
-////        Matrix actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getTransposeMatrix();
-////        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName()));
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getDecompositionOfVectorsByLinearIndependent1(){
-////        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDecompositionOfVectorsByLinearIndependent();
-////        String expected = "Basis:\n" +
-////                "vector2\n" +
-////                "vector4\n" +
-////                "\n" +
-////                "Decomposition by basis:\n" +
-////                "vector1 = (0/1)*vector2 + (0/1)*vector4\n" +
-////                "vector2 = (1/1)*vector2 + (0/1)*vector4\n" +
-////                "vector3 = (-1/1)*vector2 + (0/1)*vector4\n" +
-////                "vector4 = (0/1)*vector2 + (1/1)*vector4\n" +
-////                "vector5 = (0/1)*vector2 + (2/1)*vector4\n";
-////        assertEquals(expected, actual);
-////    }
-////
-////    @Test
-////    public void getDecompositionOfVectorsByLinearIndependent2(){
-////        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDecompositionOfVectorsByLinearIndependent();
-////        String expected = "Basis:\n" +
-////                "vector1\n" +
-////                "vector2\n" +
-////                "vector4\n" +
-////                "\n" +
-////                "Decomposition by basis:\n" +
-////                "vector1 = (1/1)*vector1 + (0/1)*vector2 + (0/1)*vector4\n" +
-////                "vector2 = (0/1)*vector1 + (1/1)*vector2 + (0/1)*vector4\n" +
-////                "vector3 = (0/1)*vector1 + (5645465/1)*vector2 + (0/1)*vector4\n" +
-////                "vector4 = (0/1)*vector1 + (0/1)*vector2 + (1/1)*vector4\n" +
-////                "vector5 = (-10/1)*vector1 + (7/1)*vector2 + (6/1)*vector4\n";
-////        assertEquals(expected, actual);
-////    }
+//    @Test
+//    public void getDecompositionOfVectorsByLinearIndependent2(){
+//        String actual = GsonParser.matrixFromJson(getJsonStringIn(getMethodName())).getDecompositionOfVectorsByLinearIndependent();
+//        String expected = "Basis:\n" +
+//                "vector1\n" +
+//                "vector2\n" +
+//                "vector4\n" +
+//                "\n" +
+//                "Decomposition by basis:\n" +
+//                "vector1 = (1/1)*vector1 + (0/1)*vector2 + (0/1)*vector4\n" +
+//                "vector2 = (0/1)*vector1 + (1/1)*vector2 + (0/1)*vector4\n" +
+//                "vector3 = (0/1)*vector1 + (5645465/1)*vector2 + (0/1)*vector4\n" +
+//                "vector4 = (0/1)*vector1 + (0/1)*vector2 + (1/1)*vector4\n" +
+//                "vector5 = (-10/1)*vector1 + (7/1)*vector2 + (6/1)*vector4\n";
+//        assertEquals(expected, actual);
+//    }
 
 
 }

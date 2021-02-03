@@ -1,27 +1,71 @@
 package calculator;
 
 
-import matrix.Matrix;
-import rational.Rational;
+import calculator.services.MatrixToken;
+import calculator.services.RationalToken;
 
-public interface Token {
-    Type type = Type.Token;
+public class Token {
+    public Type type = Type.Token;
+    public enum Type{
+        Matrix,
+        Rational,
+        Token
+    }
+
+    public Token add(Token token) {
+        return null;
+    }
+
+    public Token sub(Token token) throws IllegalArgumentException {
+        return null;
+    }
+
+    public Token mlp(Token token) throws IllegalArgumentException {
+        return null;
+    }
+
+    public Token pow(Token token) throws IllegalArgumentException {
+        return null;
+    }
+
+    public Token getInverseMatrix() {
+        return null;
+    }
+
+    public Token getDeterminant() {
+        return null;
+    }
+
+    public Token getTransposeMatrix() {
+        return null;
+    }
+
+    public Token getTriangleMatrix() {
+        return null;
+    }
+
+
+    public Token getRankOfMatrix() {
+        return null;
+    }
+
 
     // binary
 
-    public Token add(Token token) throws IllegalArgumentException;
-        /*if ((Type.Matrix.compareTo(type) == 0) && (Type.Matrix.compareTo(token.type) == 0)) {
-            return ((Matrix) this).add((Matrix) token);
-        }
-        if ((Type.Rational.compareTo(type) == 0) && (Type.Rational.compareTo(token.type) == 0)) {
-            return ((Rational) this).add((Rational) token);
-        }
 
-        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
-            return ((Matrix) this).add((Rational) token);
-        }
 
-        throw new IllegalArgumentException("invalid operands in add");*/
+//        if ((Type.Matrix.compareTo(type) == 0) && (Type.Matrix.compareTo(token.type) == 0)) {
+//            return ((Matrix) this).add((Matrix) token);
+//        }
+//        if ((Type.Rational.compareTo(type) == 0) && (Type.Rational.compareTo(token.type) == 0)) {
+//            return ((Rational) this).add((Rational) token);
+//        }
+//
+//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
+//            return ((Matrix) this).add((Rational) token);
+//        }
+//
+//        throw new IllegalArgumentException("invalid operands in add");
     }
 
 //    public Token sub(Token token) throws IllegalArgumentException{
@@ -102,14 +146,3 @@ public interface Token {
 //        if (this.type != Token.Type.Matrix) throw new IllegalArgumentException("wrong argument in rank(A)");
 //        return ((Matrix) this).getRank();
 //    }
-
-    public static enum Type{
-        Matrix,
-        Rational,
-        Token
-    }
-
-
-
-
-}

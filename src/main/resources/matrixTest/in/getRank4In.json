@@ -1,5 +1,5 @@
 {
-  "mainMatrix":[
+  "main":[
     [{"numerator":1},{"numerator":2},{"numerator":0}, {"numerator":5}],
     [{"numerator":2},{"numerator":4},{"numerator":-1}, {"numerator":0}],
     [{"numerator":-2},{"numerator":-4},{"numerator":1}, {"numerator":0}],

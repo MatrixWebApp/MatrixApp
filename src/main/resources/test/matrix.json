@@ -1,0 +1,1483 @@
+{
+  "constructor1": {
+    "main": [
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ]
+    ]
+  },
+  "constructor2": {
+    "main": [
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ],
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        },
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ]
+    ]
+  },
+  "constructor3": {
+    "main": [
+      [
+        {
+          "numerator": 0,
+          "denominator": 1
+        }
+      ]
+    ]
+  },
+  "swipeColumn1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 3,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 5,
+            "denominator": 1
+          },
+          {
+            "numerator": 3,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "swipeRow1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 3,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 3,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "addRow1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 4
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          }
+        ],
+        [
+          {
+            "numerator": 1,
+            "denominator": 9
+          },
+          {
+            "numerator": 5,
+            "denominator": 9
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 13,
+            "denominator": 36
+          },
+          {
+            "numerator": 19,
+            "denominator": 18
+          }
+        ],
+        [
+          {
+            "numerator": 1,
+            "denominator": 9
+          },
+          {
+            "numerator": 5,
+            "denominator": 9
+          }
+        ]
+      ]
+    }
+  },
+  "mlpRow1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 3,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 4,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 1
+          },
+          {
+            "numerator": 6,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 7,
+            "denominator": 1
+          },
+          {
+            "numerator": 8,
+            "denominator": 1
+          },
+          {
+            "numerator": 9,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 3,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 4,
+            "denominator": 3
+          },
+          {
+            "numerator": 5,
+            "denominator": 3
+          },
+          {
+            "numerator": 6,
+            "denominator": 3
+          }
+        ],
+        [
+          {
+            "numerator": 7,
+            "denominator": 1
+          },
+          {
+            "numerator": 8,
+            "denominator": 1
+          },
+          {
+            "numerator": 9,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "determinantOfTriangleMatrix1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 7
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 9,
+            "denominator": 4
+          }
+        ]
+      ]
+    }
+  },
+  "getInverseMatrix1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": -1,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          }
+        ],
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "getInverseMatrix2": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 24,
+            "denominator": 1
+          },
+          {
+            "numerator": 34,
+            "denominator": 1
+          },
+          {
+            "numerator": 49,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 90,
+            "denominator": 1
+          },
+          {
+            "numerator": 76,
+            "denominator": 1
+          },
+          {
+            "numerator": 118,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 96,
+            "denominator": 1
+          },
+          {
+            "numerator": 118,
+            "denominator": 1
+          },
+          {
+            "numerator": 187,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": -1,
+            "denominator": 60
+          },
+          {
+            "numerator": 1,
+            "denominator": 30
+          },
+          {
+            "numerator": -1,
+            "denominator": 60
+          }
+        ],
+        [
+          {
+            "numerator": 917,
+            "denominator": 2880
+          },
+          {
+            "numerator": 125,
+            "denominator": 10000
+          },
+          {
+            "numerator": -263,
+            "denominator": 2880
+          }
+        ],
+        [
+          {
+            "numerator": -277,
+            "denominator": 1440
+          },
+          {
+            "numerator": -25,
+            "denominator": 1000
+          },
+          {
+            "numerator": 103,
+            "denominator": 1440
+          }
+        ]
+      ]
+    }
+  },
+  "getInverseMatrix3": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 5,
+            "denominator": 1
+          },
+          {
+            "numerator": 8,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 8,
+            "denominator": 6
+          },
+          {
+            "numerator": -2,
+            "denominator": 6
+          }
+        ],
+        [
+          {
+            "numerator": -5,
+            "denominator": 6
+          },
+          {
+            "numerator": 2,
+            "denominator": 6
+          }
+        ]
+      ]
+    }
+  },
+  "add1": {
+    "in": [
+      {
+        "main": [
+          [
+            {
+              "numerator": 1,
+              "denominator": 4
+            },
+            {
+              "numerator": 1,
+              "denominator": 2
+            }
+          ],
+          [
+            {
+              "numerator": 1,
+              "denominator": 9
+            },
+            {
+              "numerator": 5,
+              "denominator": 9
+            }
+          ]
+        ]
+      },
+      {
+        "main": [
+          [
+            {
+              "numerator": -1,
+              "denominator": 4
+            },
+            {
+              "numerator": -1,
+              "denominator": 2
+            }
+          ],
+          [
+            {
+              "numerator": -1,
+              "denominator": 9
+            },
+            {
+              "numerator": -5,
+              "denominator": 9
+            }
+          ]
+        ]
+      }
+    ],
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "mlp1": {
+    "in": [
+      {
+        "main": [
+          [
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 3,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 5,
+              "denominator": 1
+            },
+            {
+              "numerator": 6,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 7,
+              "denominator": 1
+            },
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 9,
+              "denominator": 1
+            }
+          ]
+        ]
+      },
+      {
+        "main": [
+          [
+            {
+              "numerator": 5,
+              "denominator": 1
+            },
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 6,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 2,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 8,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 5,
+              "denominator": 1
+            },
+            {
+              "numerator": 8,
+              "denominator": 1
+            },
+            {
+              "numerator": 9,
+              "denominator": 1
+            }
+          ]
+        ]
+      }
+    ],
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 24,
+            "denominator": 1
+          },
+          {
+            "numerator": 34,
+            "denominator": 1
+          },
+          {
+            "numerator": 49,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 60,
+            "denominator": 1
+          },
+          {
+            "numerator": 76,
+            "denominator": 1
+          },
+          {
+            "numerator": 118,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 96,
+            "denominator": 1
+          },
+          {
+            "numerator": 118,
+            "denominator": 1
+          },
+          {
+            "numerator": 187,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "mlp2": {
+    "in": [
+      {
+        "main": [
+          [
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 23,
+              "denominator": 1
+            },
+            {
+              "numerator": 5,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": -7,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 5,
+              "denominator": 1
+            },
+            {
+              "numerator": 1,
+              "denominator": 1
+            },
+            {
+              "numerator": 4,
+              "denominator": 1
+            }
+          ]
+        ]
+      },
+      {
+        "main": [
+          [
+            {
+              "numerator": 12,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            },
+            {
+              "numerator": 0,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 4,
+              "denominator": 1
+            },
+            {
+              "numerator": -2,
+              "denominator": 1
+            },
+            {
+              "numerator": 5,
+              "denominator": 1
+            }
+          ],
+          [
+            {
+              "numerator": 3,
+              "denominator": 2
+            },
+            {
+              "numerator": 3,
+              "denominator": 1
+            },
+            {
+              "numerator": 54,
+              "denominator": 1
+            }
+          ]
+        ]
+      }
+    ],
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 1355,
+            "denominator": 10
+          },
+          {
+            "numerator": -31,
+            "denominator": 1
+          },
+          {
+            "numerator": 385,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": -68,
+            "denominator": 1
+          },
+          {
+            "numerator": -8,
+            "denominator": 1
+          },
+          {
+            "numerator": 20,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 70,
+            "denominator": 1
+          },
+          {
+            "numerator": 10,
+            "denominator": 1
+          },
+          {
+            "numerator": 221,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "toIMatrix1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 3,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 4,
+            "denominator": 1
+          },
+          {
+            "numerator": 5,
+            "denominator": 1
+          },
+          {
+            "numerator": 6,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 7,
+            "denominator": 1
+          },
+          {
+            "numerator": 8,
+            "denominator": 1
+          },
+          {
+            "numerator": 9,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": -1,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "toIMatrix2": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": 24,
+            "denominator": 1
+          },
+          {
+            "numerator": 34,
+            "denominator": 1
+          },
+          {
+            "numerator": 49,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 60,
+            "denominator": 1
+          },
+          {
+            "numerator": 76,
+            "denominator": 1
+          },
+          {
+            "numerator": 118,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 96,
+            "denominator": 1
+          },
+          {
+            "numerator": 118,
+            "denominator": 1
+          },
+          {
+            "numerator": 187,
+            "denominator": 1
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 4,
+            "denominator": 3
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 2
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "toIMatrix3": {
+    "in":{
+      "main":[
+        [{"numerator": 2},{"numerator": 4}],
+        [{"numerator": 4},{"numerator": 8}]
+      ]
+    }
+  ,
+    "out":{
+      "main":[
+        [{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
+        [{"numerator": 0,"denominator": 1},{"numerator": 0,"denominator": 1}]
+      ]
+    }
+
+  },
+  "toIMatrix4": {
+    "in": {
+      "main":[
+        [{"numerator":6},{"numerator":-2}, {"numerator":4}, {"numerator":5}],
+        [{"numerator":9},{"numerator":-3}, {"numerator":4}, {"numerator":8}],
+        [{"numerator":6},{"numerator":-2}, {"numerator":6}, {"numerator":7}],
+        [{"numerator":3},{"numerator":-1}, {"numerator":4}, {"numerator":4}]
+      ],
+      "augmentedMatrix":[
+        [{"numerator":7}],
+        [{"numerator":9}],
+        [{"numerator":1}],
+        [{"numerator":-1}]
+      ]
+    }
+  ,
+    "out":{
+      "main":[
+        [{"numerator":1},{"numerator":0}, {"numerator":0}, {"numerator":-1,"denominator": 3}],
+        [{"numerator":0},{"numerator":1}, {"numerator":0}, {"numerator":0}],
+        [{"numerator":0},{"numerator":0}, {"numerator":1}, {"numerator":0}],
+        [{"numerator":0},{"numerator":0}, {"numerator":0}, {"numerator":0}]
+      ],
+      "augmentedMatrix":[
+        [{"numerator":11, "denominator":3}],
+        [{"numerator": 0}],
+        [{"numerator": -3}],
+        [{"numerator": 0}]
+      ]
+    }
+  },
+  "toIMatrix5": {
+    "in": {
+      "main":[
+        [{"numerator":6},{"numerator":-2}, {"numerator":3}, {"numerator":5}],
+        [{"numerator":9},{"numerator":-3}, {"numerator":4}, {"numerator":8}],
+        [{"numerator":6},{"numerator":-2}, {"numerator":6}, {"numerator":7}],
+        [{"numerator":3},{"numerator":-1}, {"numerator":4}, {"numerator":4}]
+      ],
+      "augmentedMatrix":[
+        [{"numerator":7}],
+        [{"numerator":9}],
+        [{"numerator":1}],
+        [{"numerator":-1}]
+      ]
+    }
+
+  ,
+    "out":{
+      "main":[
+        [{"numerator":1},{"numerator":0}, {"numerator":0}, {"numerator":-1, "denominator":3}],
+        [{"numerator":0},{"numerator":1}, {"numerator":0}, {"numerator":0}],
+        [{"numerator":0},{"numerator":0}, {"numerator":1}, {"numerator":0}],
+        [{"numerator":0},{"numerator":0}, {"numerator":0}, {"numerator":0}]
+      ],
+      "augmentedMatrix":[
+        [{"numerator":11, "denominator": 3 }],
+        [{"numerator":0}],
+        [{"numerator":-3}],
+        [{"numerator":0}]
+      ]
+    }
+
+  },
+  "rank1":{
+    "in": {
+      "main":[
+        [{"numerator":3},{"numerator":1}, {"numerator":-1}, {"numerator":-2}, {"numerator":8}],
+        [{"numerator":7},{"numerator":1}, {"numerator":-2}, {"numerator":-1}, {"numerator":12}],
+        [{"numerator":11},{"numerator":1}, {"numerator":-3}, {"numerator":0}, {"numerator":16}],
+        [{"numerator":2},{"numerator":2}, {"numerator":-1}, {"numerator":-5}, {"numerator":12}]
+      ]
+    }
+  },
+  "rank2":{
+    "in": {
+      "main":[
+        [{"numerator":1},{"numerator":1}, {"numerator":1}, {"numerator":1}, {"numerator":0}],
+        [{"numerator":1},{"numerator":2}, {"numerator":1}, {"numerator":1}, {"numerator":0}],
+        [{"numerator":1},{"numerator":1}, {"numerator":3}, {"numerator":1}, {"numerator":0}],
+        [{"numerator":1},{"numerator":1}, {"numerator":1}, {"numerator":4}, {"numerator":0}],
+        [{"numerator":1},{"numerator":2}, {"numerator":3}, {"numerator":4}, {"numerator":0}]
+      ]
+    }
+  },
+  "rank3":{
+    "in": {
+      "main":[
+        [{"numerator":-4},{"numerator":7}, {"numerator":5}],
+        [{"numerator":3},{"numerator":-1}, {"numerator":2}],
+        [{"numerator":9},{"numerator":8}, {"numerator":1}],
+        [{"numerator":5},{"numerator":15}, {"numerator":6}],
+        [{"numerator":-1},{"numerator":6}, {"numerator":7}]
+      ]
+    }
+  },
+  "rank4":{
+    "in": {
+      "main":[
+        [{"numerator":1},{"numerator":2},{"numerator":0}, {"numerator":5}],
+        [{"numerator":2},{"numerator":4},{"numerator":-1}, {"numerator":0}],
+        [{"numerator":-2},{"numerator":-4},{"numerator":1}, {"numerator":0}],
+        [{"numerator":1},{"numerator":2},{"numerator":2}, {"numerator":1}]
+      ]
+    }
+  },
+  "rank5":{
+    "in": {
+      "main":[
+        [{"numerator":0},{"numerator":0}, {"numerator":0}],
+        [{"numerator":2},{"numerator":4}, {"numerator":-1}],
+        [{"numerator":-2},{"numerator":-4}, {"numerator":1}],
+        [{"numerator":1},{"numerator":0}, {"numerator":2}],
+        [{"numerator":4},{"numerator":8}, {"numerator":-2}],
+        [{"numerator":-1},{"numerator":4}, {"numerator":3}]
+      ]
+    }
+  },
+  "rank6":{
+    "in":{
+      "main":[
+        [{"numerator":0},{"numerator":0}, {"numerator":0}],
+        [{"numerator":2},{"numerator":4}, {"numerator":-1}],
+        [{"numerator":-2},{"numerator":-4}, {"numerator":1}],
+        [{"numerator":7},{"numerator":13}, {"numerator":2}],
+        [{"numerator":14},{"numerator":26}, {"numerator":4}]
+      ]
+    }
+  },
+  "rank7":{
+    "in": {
+      "main":[
+        [{"numerator":1},{"numerator":2}, {"numerator":1}],
+        [{"numerator":1},{"numerator":1}, {"numerator":1}],
+        [{"numerator":1},{"numerator":1}, {"numerator":3}]
+      ]
+    }
+  },
+  "determinantByTriangleMatrix1": {
+    "in":{
+      "main":[
+        [{"numerator": 24}, {"numerator": 34},{"numerator": 49}],
+        [{"numerator": 60}, {"numerator": 76},{"numerator": 118}],
+        [{"numerator": 96}, {"numerator": 118},{"numerator": 187}]
+      ]
+    }
+  },
+  "determinantByTriangleMatrix2": {
+    "in":{
+      "main":[
+        [{"numerator": 54}, {"numerator": 5},{"numerator": 2}],
+        [{"numerator": 3}, {"numerator": 4},{"numerator": 5}],
+        [{"numerator": 8}, {"numerator": 9},{"numerator": 6}]
+      ]
+    }
+  },
+  "determinantByTriangleMatrix3": {
+    "in":{
+      "main":[
+        [{"numerator": 1}, {"numerator": 0},{"numerator": 2}],
+        [{"numerator": 3}, {"numerator": 4},{"numerator": 8}],
+        [{"numerator": 8}, {"numerator": 1},{"numerator": 6}]
+      ]
+    }
+  },
+  "determinantByTriangleMatrix4": {
+    "in":{
+      "main":[
+        [{"numerator": 24}]
+      ]
+    }
+  },
+  "determinantByTriangleMatrix5": {
+    "in":{
+      "main":[
+        [{"numerator": 54}, {"numerator": 5},{"numerator": 2}],
+        [{"numerator": 3}, {"numerator": 4},{"numerator": 5}]
+      ]
+    }
+  },
+  "determinantByTriangleMatrix6": {
+    "in":{
+      "main":[
+        [{"numerator": 3}, {"numerator": 2}],
+        [{"numerator": 9, "denominator": 2}, {"numerator": 3}]
+      ]
+    }
+  },
+  "transposeMatrix1": {
+    "in": {
+      "main": [
+        [
+          {
+            "numerator": -4
+          },
+          {
+            "numerator": 7
+          },
+          {
+            "numerator": 5
+          }
+        ],
+        [
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": -1
+          },
+          {
+            "numerator": 2
+          }
+        ],
+        [
+          {
+            "numerator": 9
+          },
+          {
+            "numerator": 8
+          },
+          {
+            "numerator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 5
+          },
+          {
+            "numerator": 15
+          },
+          {
+            "numerator": 6
+          }
+        ],
+        [
+          {
+            "numerator": -1
+          },
+          {
+            "numerator": 6
+          },
+          {
+            "numerator": 7
+          }
+        ]
+      ]
+    },
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": -4
+          },
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": 9
+          },
+          {
+            "numerator": 5
+          },
+          {
+            "numerator": -1
+          }
+        ],
+        [
+          {
+            "numerator": 7
+          },
+          {
+            "numerator": -1
+          },
+          {
+            "numerator": 8
+          },
+          {
+            "numerator": 15
+          },
+          {
+            "numerator": 6
+          }
+        ],
+        [
+          {
+            "numerator": 5
+          },
+          {
+            "numerator": 2
+          },
+          {
+            "numerator": 1
+          },
+          {
+            "numerator": 6
+          },
+          {
+            "numerator": 7
+          }
+        ]
+      ]
+    }
+  },
+  "inverseMatrix1": {
+    "in": {
+      "main":[
+        [{"numerator": 0,"denominator": 1},{"numerator": 1,"denominator": 1}],
+        [{"numerator": 2,"denominator": 1},{"numerator": 2,"denominator": 1}]
+      ]
+    },
+    "out": {
+      "main":[
+        [{"numerator": -1,"denominator": 1},{"numerator": 1,"denominator": 2}],
+        [{"numerator": 1,"denominator": 1},{"numerator": 0,"denominator": 1}]
+      ]
+    }
+  },
+  "inverseMatrix2": {
+    "in": {
+      "main":[
+        [{"numerator": 24,"denominator": 1},{"numerator": 34,"denominator": 1},{"numerator": 49,"denominator": 1}],
+        [{"numerator": 90,"denominator": 1},{"numerator": 76,"denominator": 1},{"numerator": 118,"denominator": 1}],
+        [{"numerator": 96,"denominator": 1},{"numerator": 118,"denominator": 1},{"numerator": 187,"denominator": 1}]
+
+      ]
+    }
+  ,
+    "out": {
+      "main":[
+        [{"numerator": -1,"denominator": 60},{"numerator": 1,"denominator": 30},{"numerator": -1,"denominator": 60}],
+        [{"numerator": 917,"denominator": 2880},{"numerator": 125,"denominator": 10000},{"numerator": -263,"denominator": 2880}],
+        [{"numerator": -277,"denominator": 1440},{"numerator": -25,"denominator": 1000},{"numerator": 103, "denominator": 1440}]
+      ]
+    }
+
+  },
+  "inverseMatrix3": {
+    "in": {
+      "main":[
+        [{"numerator": 2,"denominator": 1},{"numerator": 2,"denominator": 1}],
+        [{"numerator": 5,"denominator": 1},{"numerator": 8,"denominator": 1}]
+      ]
+    },
+    "out": {
+      "main":[
+        [{"numerator": 8,"denominator": 6},{"numerator": -2,"denominator": 6}],
+        [{"numerator": -5,"denominator": 6},{"numerator": 2,"denominator": 6}]
+      ]
+    }
+  }
+}
