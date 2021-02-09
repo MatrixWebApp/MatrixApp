@@ -1,76 +1,84 @@
-//package calculator;
-//
-//import calculator.view.gsonParser.GsonVariableParser;
-//import model.Matrix.Matrix;
-//import model.Rational.Rational;
-//import org.junit.jupiter.api.Test;
-//import view.Variable;
-//import view.gsonParser.GsonParser;
-//import view.gsonParser.GsonVariableParser;
-//
-//import java.io.File;
-//import java.io.IOException;
-//import java.nio.file.Files;
-//import java.nio.file.Paths;
-//import java.util.ArrayList;
-//import java.util.stream.Collectors;
-//
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//
-//
-//class
-//CalculatorTest {
-//
-//
-//    private final String pathToTest = "web"+File.separator+"resources"+File.separator+"calculatorTest";
-//
-//    private String getJsonStringIn(String fileName){
-//        try {
-//            return new String(Files.readAllBytes(Paths.get(pathToTest+File.separator+"in"+File.separator+fileName+"In.json")));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
-//    private String getJsonStringOut(String fileName){
-//        try {
-//            return new String(Files.readAllBytes(Paths.get(pathToTest+File.separator+"Out"+File.separator+fileName+"Out.json")));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            return null;
-//        }
-//    }
-//    private String getMethodName(int number){
-//        return (new Throwable()).getStackTrace()[number].getMethodName();
-//    }
-//    private ArrayList<Variable> getInVariables(){
-//        ArrayList<Variable> values = new ArrayList<>();
-//        try {
-//            int fileCount = Files.list(Paths.get(pathToTest + "\\in\\"+getMethodName(2))).collect(Collectors.toList()).size();
-//            for (int i = 1; i <= fileCount; i++) {
-//                values.add(GsonVariableParser.getVariable(getJsonStringIn(getMethodName(2)+"\\"+getMethodName(2)+"."+i)));
-//            }
-//        } catch(IOException e){
-//            e.printStackTrace();
-//        }
-//        return values;
-//    }
-//
-//
-//
-//    @Test
-//    void evaluate1() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Matrix actual = (Matrix) calculator.evaluate("A-B");
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName(1)));
-//
-//        assertEquals(expected, actual);
-//
-//    }
+
+
+
+import calculator.Calculator;
+import calculator.Token;
+import calculator.services.MatrixToken;
+import calculator.services.Variable;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import gsonParser.GsonParser;
+import gsonParser.GsonVariableParser;
+import matrix.Matrix;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+class
+CalculatorTest {
+
+    private Path path;
+    private JsonElement testJson;
+
+    @BeforeEach
+    public void setup() {
+        // ./src/main/resources/matrixTest
+        path = Paths.get(".", "src", "main", "resources", "test", "calculator.json");
+        testJson = getJson(path);
+
+    }
+
+    private JsonElement getJson(Path fileName) {
+        try {
+            String jsonString = new String(
+                    Files.readAllBytes(Paths.get(fileName.toString())));
+            return new JsonParser().parse(jsonString);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // parse array
+    private ArrayList<Variable> getVariableArray(JsonElement json) {
+        ArrayList<Variable> variables = new ArrayList<>();
+        int quantity = json.getAsJsonObject().get("in").getAsJsonArray().size();
+        for (int i = 0; i < quantity; i++) {
+            Variable var = GsonParser.variableFromJson(
+                    json.getAsJsonObject().get("in").getAsJsonArray().get(i).getAsJsonObject()
+            );
+            variables.add(var);
+        }
+        return variables;
+    }
+
+
+    @Test
+    void evaluate1() {
+        JsonElement json = testJson.getAsJsonObject().get("evaluate1");
+        ArrayList<Variable> variables = getVariableArray(json);
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("A-B");
+        Token expected = new MatrixToken(GsonParser.matrixFromJson(out));
+
+        assertEquals(expected, actual);
+
+    }
 //
 //    @Test
 //    void evaluate2() {
@@ -163,7 +171,7 @@
 //        Calculator calculator = new Calculator(new ArrayList<>());
 //
 //        Rational actual = (Rational) calculator.evaluate("(5/4)^(-8)");
-//        Rational expected = new Rational( 65536, 390625);
+//        Rational expected = new Rational(65536, 390625);
 //
 //        assertEquals(actual, expected);
 //
@@ -419,4 +427,4 @@
 //
 //        assertEquals(expected, actual);
 //    }
-//}
+}

@@ -3,13 +3,16 @@ package calculator;
 
 import calculator.services.MatrixToken;
 import calculator.services.RationalToken;
+import matrix.Matrix;
+
+import java.util.Objects;
 
 public class Token {
-    public Type type = Type.Token;
+    public Type type;
+
     public enum Type{
         Matrix,
-        Rational,
-        Token
+        Rational
     }
 
     public Token add(Token token) {
@@ -49,7 +52,29 @@ public class Token {
         return null;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Token token = (Token) o;
 
+        if (type != token.type) return false;
+
+        switch (type){
+            case Matrix:
+                return ((MatrixToken) this).getMatrix().equals(((MatrixToken) token).getMatrix());
+            case Rational:
+                return ((RationalToken) this).getRational().equals(((RationalToken) token).getRational());
+            default:
+                return false;
+        }
+
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type);
+    }
     // binary
 
 

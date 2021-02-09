@@ -8,6 +8,13 @@ public class MatrixToken extends Token {
 
     private Matrix matrix;
 
+    public Matrix getMatrix() {
+        return matrix;
+    }
+
+    public void setMatrix(Matrix matrix) {
+        this.matrix = matrix;
+    }
 
     public MatrixToken(Matrix matrix) {
         this.matrix = new Matrix(matrix);
@@ -54,7 +61,7 @@ public class MatrixToken extends Token {
         }
         if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
             return new MatrixToken(
-                    matrix.mlp(((RationalToken) token).rational)
+                    matrix.mlp(((RationalToken) token).getRational())
             );
         }
 
@@ -63,11 +70,11 @@ public class MatrixToken extends Token {
 
     public Token pow(Token token) throws IllegalArgumentException {
         if (Type.Rational.compareTo(token.type) == 0) {
-            if (((RationalToken) token).rational.getDenominator() != 1) {
+            if (((RationalToken) token).getRational().getDenominator() != 1) {
                 throw new IllegalArgumentException("invalid power in pow");
             }
             return new MatrixToken(
-                    matrix.pow(((RationalToken) token).rational)
+                    matrix.pow(((RationalToken) token).getRational())
             );
         }
         throw new IllegalArgumentException("invalid argument in pow");

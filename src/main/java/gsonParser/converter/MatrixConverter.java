@@ -19,7 +19,7 @@ public class MatrixConverter implements JsonDeserializer<Matrix> {
         return new Matrix(main, augmented);
     }
 
-    private ArrayList<ArrayList<Rational>> getMainFromJson(JsonElement jsonElement) {
+    static private ArrayList<ArrayList<Rational>> getMainFromJson(JsonElement jsonElement) {
         // get main JsonArray to convert it to Matrix
         JsonArray jsonArray = jsonElement.getAsJsonObject().get("main").getAsJsonArray();
         ArrayList<ArrayList<Rational>> main = new ArrayList<>();
@@ -35,7 +35,7 @@ public class MatrixConverter implements JsonDeserializer<Matrix> {
         return main;
     }
 
-    private ArrayList<ArrayList<Rational>> getAugmentedFromJson(JsonElement jsonElement){
+    static private ArrayList<ArrayList<Rational>> getAugmentedFromJson(JsonElement jsonElement){
         // get main JsonArray to convert it to Matrix
         JsonArray jsonArray = jsonElement
                 .getAsJsonObject()

@@ -4,7 +4,6 @@ package calculator;
 
 import calculator.services.RationalToken;
 import calculator.services.Variable;
-import rational.Rational;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;

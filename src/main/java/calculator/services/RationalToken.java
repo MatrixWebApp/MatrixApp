@@ -4,7 +4,15 @@ import calculator.Token;
 import rational.Rational;
 
 public class RationalToken extends Token {
-    public Rational rational;
+    private Rational rational;
+
+    public Rational getRational() {
+        return rational;
+    }
+
+    public void setRational(Rational rational) {
+        this.rational = rational;
+    }
 
     public RationalToken(Rational rational){
         this.rational = rational;

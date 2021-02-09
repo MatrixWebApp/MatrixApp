@@ -1,8 +1,10 @@
 package gsonParser;
 
+import calculator.services.Variable;
 import com.google.gson.*;
 import gsonParser.converter.MatrixConverter;
 import gsonParser.converter.RationalConverter;
+import gsonParser.converter.VariableConverter;
 import matrix.Matrix;
 import rational.Rational;
 
@@ -10,6 +12,8 @@ import rational.Rational;
 public class GsonParser {
     private static Gson gsonMatrixParser;
     private static Gson gsonRationalParser;
+    private static Gson gsonVariableParser;
+
     private static JsonParser parser;
 
     static {
@@ -19,6 +23,10 @@ public class GsonParser {
         gsonMatrixParser = new GsonBuilder()
                 .registerTypeAdapter(Matrix.class, new MatrixConverter())
                 .create();
+        gsonVariableParser = new GsonBuilder()
+                .registerTypeAdapter(Variable.class, new VariableConverter())
+                .create();
+
         parser = new JsonParser();
     }
 
@@ -40,4 +48,7 @@ public class GsonParser {
         return parser.parse(json);
     }
 
+    public static Variable variableFromJson(JsonElement json) {
+        return gsonVariableParser.fromJson(json, Variable.class);
+    }
 }

@@ -42,11 +42,6 @@ class MatrixTest {
         }
     }
 
-
-
-
-
-
     @Test
     public void test1(){
         Matrix actual = new Matrix(3,3);
@@ -186,7 +181,7 @@ class MatrixTest {
 
 //
     @Test
-    public void add1() {
+    public void test12() {
         JsonElement json =  testJson.getAsJsonObject().get("add1");
         List<JsonElement> in = Arrays.asList(
                 json.getAsJsonObject().get("in").getAsJsonArray().get(0).getAsJsonObject(),
@@ -203,7 +198,7 @@ class MatrixTest {
     }
 
     @Test
-    public void mlp1() {
+    public void test13() {
         JsonElement json =  testJson.getAsJsonObject().get("mlp1");
         List<JsonElement> in = Arrays.asList(
                 json.getAsJsonObject().get("in").getAsJsonArray().get(0).getAsJsonObject(),
@@ -221,7 +216,7 @@ class MatrixTest {
     }
 
     @Test
-    public void mlp2() {
+    public void test14() {
         JsonElement json =  testJson.getAsJsonObject().get("mlp2");
         List<JsonElement> in = Arrays.asList(
                 json.getAsJsonObject().get("in").getAsJsonArray().get(0).getAsJsonObject(),
@@ -240,7 +235,7 @@ class MatrixTest {
 
 
     @Test
-    public void toIMatrix1(){
+    public void test15(){
         JsonElement json =  testJson.getAsJsonObject().get("toIMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -252,7 +247,7 @@ class MatrixTest {
     }
 
     @Test
-    public void toIMatrix2(){
+    public void test16(){
         JsonElement json =  testJson.getAsJsonObject().get("toIMatrix2");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -265,7 +260,7 @@ class MatrixTest {
 
 
     @Test
-    public void toIMatrix3(){
+    public void test17(){
         JsonElement json =  testJson.getAsJsonObject().get("toIMatrix3");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -278,7 +273,7 @@ class MatrixTest {
 
 
     @Test
-    public void toIMatrix4(){
+    public void test18(){
         JsonElement json =  testJson.getAsJsonObject().get("toIMatrix4");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -291,7 +286,7 @@ class MatrixTest {
 
 
     @Test
-    public void toIMatrix5(){
+    public void test19(){
         JsonElement json =  testJson.getAsJsonObject().get("toIMatrix5");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -304,7 +299,7 @@ class MatrixTest {
 
 
     @Test
-    public void rank1(){
+    public void test20(){
         JsonElement json =  testJson.getAsJsonObject().get("rank1");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -316,7 +311,7 @@ class MatrixTest {
 
 
     @Test
-    public void rank2(){
+    public void test21(){
         JsonElement json =  testJson.getAsJsonObject().get("rank2");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -327,7 +322,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getRank3(){
+    public void test22(){
         JsonElement json =  testJson.getAsJsonObject().get("rank3");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -338,7 +333,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getRank4(){
+    public void test23(){
         JsonElement json =  testJson.getAsJsonObject().get("rank4");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -349,7 +344,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getRank5(){
+    public void test24(){
         JsonElement json =  testJson.getAsJsonObject().get("rank5");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -361,7 +356,7 @@ class MatrixTest {
 
 
     @Test
-    public void getRank6(){
+    public void test25(){
         JsonElement json =  testJson.getAsJsonObject().get("rank6");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -372,7 +367,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getRank7(){
+    public void test261(){
         JsonElement json =  testJson.getAsJsonObject().get("rank7");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -383,7 +378,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getDeterminantByTriangleMatrix1(){
+    public void test27(){
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -394,7 +389,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getDeterminantByTriangleMatrix2(){
+    public void test28(){
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix2");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -405,7 +400,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getDeterminantByTriangleMatrix3(){
+    public void test29(){
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix3");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -416,7 +411,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getDeterminantByTriangleMatrix4(){
+    public void test30(){
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix4");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -428,7 +423,7 @@ class MatrixTest {
 
 
     @Test
-    public void getDeterminantByTriangleMatrix5(){
+    public void test31(){
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix5");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -437,7 +432,7 @@ class MatrixTest {
     }
 
     @Test
-    public void getDeterminantByTriangleMatrix6(){
+    public void test32(){
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix6");
         JsonElement in = json.getAsJsonObject().get("in");
 
@@ -483,7 +478,7 @@ class MatrixTest {
 
 
     @Test
-    public void getTransposeMatrix1(){
+    public void test33(){
         JsonElement json =  testJson.getAsJsonObject().get("transposeMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -496,7 +491,7 @@ class MatrixTest {
 
 
     @Test
-    public void inverseMatrix1(){
+    public void test34(){
         JsonElement json =  testJson.getAsJsonObject().get("inverseMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -508,7 +503,7 @@ class MatrixTest {
     }
 
     @Test
-    public void inverseMatrix2(){
+    public void test35(){
         JsonElement json =  testJson.getAsJsonObject().get("inverseMatrix2");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
@@ -520,7 +515,7 @@ class MatrixTest {
     }
 
     @Test
-    public void inverseMatrix3(){
+    public void test36(){
         JsonElement json =  testJson.getAsJsonObject().get("inverseMatrix3");
         JsonElement in = json.getAsJsonObject().get("in");
         JsonElement out = json.getAsJsonObject().get("out");
