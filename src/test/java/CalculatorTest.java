@@ -4,6 +4,7 @@
 import calculator.Calculator;
 import calculator.Token;
 import calculator.services.MatrixToken;
+import calculator.services.RationalToken;
 import calculator.services.Variable;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -79,47 +80,49 @@ CalculatorTest {
         assertEquals(expected, actual);
 
     }
-//
-//    @Test
-//    void evaluate2() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Matrix actual = (Matrix) calculator.evaluate("A*(inverse(B)*C)");
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName(1)));
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void evaluate3() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Matrix actual = (Matrix) calculator.evaluate("inverse(A)^2");
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName(1)));
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void evaluate4() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Rational actual = (Rational) calculator.evaluate("det(A*10-9*A)-1854*(-1)^4434");
-//        Rational expected = new Rational(0);
-//
-//        assertEquals(expected, actual);
-//    }
+
+    @Test
+    void evaluate2() {
+        JsonElement json = testJson.getAsJsonObject().get("evaluate2");
+        ArrayList<Variable> variables = getVariableArray(json);
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("A*(inverse(B)*C)");
+        Token expected = new MatrixToken(GsonParser.matrixFromJson(out));
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void evaluate3() {
+        JsonElement json = testJson.getAsJsonObject().get("evaluate3");
+        ArrayList<Variable> variables = getVariableArray(json);
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("inverse(A)^2");
+        Token expected = new MatrixToken(GsonParser.matrixFromJson(out));
+        assertEquals(expected, actual);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void evaluate4() {
+
+        JsonElement json = testJson.getAsJsonObject().get("evaluate4");
+        ArrayList<Variable> variables = getVariableArray(json);
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("det(A*10-9*A)+1854*(-1)^4434");
+        Token expected =  new RationalToken(0);
+        assertEquals(expected, actual);
+        assertEquals(expected, actual);
+
+        assertEquals(expected, actual);
+    }
 //
 //    @Test
 //    void evaluate5() {

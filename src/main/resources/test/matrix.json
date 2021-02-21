@@ -1317,6 +1317,15 @@
       ]
     }
   },
+  "determinantByTriangleMatrix7": {
+    "in":{
+      "main":[
+        [{"numerator": 34}, {"numerator": 34}, {"numerator": 343}],
+        [{"numerator": 3}, {"numerator": 3}, {"numerator": 3}],
+        [{"numerator": 4}, {"numerator": 2}, {"numerator": 1}]
+      ]
+    }
+  },
   "transposeMatrix1": {
     "in": {
       "main": [

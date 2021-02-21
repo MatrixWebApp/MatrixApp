@@ -112,6 +112,7 @@ public class Matrix implements MatrixOperators {
         String tmp = columnNames.get(j1);
         columnNames.set(j1, columnNames.get(j2));
         columnNames.set(j2, tmp);
+
     }
     public void swipeRow(int i1, int i2) {
         if ((i1 < 0) || (i2 < 0) || (i1 >= getHeightMainMatrix()) || (i2 >= getHeightMainMatrix())) {
@@ -168,7 +169,74 @@ public class Matrix implements MatrixOperators {
 
 
     public Rational getDeterminantByTriangleMatrix() throws IllegalArgumentException{
-        return getTriangleMatrix().getDeterminantOfTriangleMatrix();
+        // one of the determinant property:
+        // Interchanging any pair of columns or rows of a matrix multiplies its determinant by −1
+        int countOfInterchanging = 0;
+
+        if (getHeightMainMatrix() != getWidthMainMatrix()) {
+            throw new IllegalArgumentException("invalid matrix in getTriangleMatrix");
+        }
+        Matrix matrix = new Matrix(this);
+
+        int i = 0;
+        boolean isNullMatrix = false;
+
+        while ((!isNullMatrix) && (i < Math.min(matrix.getHeightMainMatrix(), matrix.getWidthMainMatrix()))) {
+            System.out.println(matrix.toString());
+            if (matrix.getHorizonCandidate(i, i) != -1) {
+                //не нули по горизонтали
+                int candidate =  matrix.getHorizonCandidate(i, i);
+                if (candidate != i) {
+                    matrix.swipeColumn(i, matrix.getHorizonCandidate(i, i));
+                    countOfInterchanging++;
+                }
+            } else {
+                if (matrix.getVerticalCandidate(i, i) != -1) {
+                    //нули по горизонтали, но не нули по вертикали
+                    int candidate = matrix.getVerticalCandidate(i, i);
+                    if (i != candidate) {
+                        matrix.swipeRow(i, candidate);
+                        countOfInterchanging++;
+                    }
+
+                } else {
+                    // крест смерти
+                    // предположим, что матрица нулевая
+                    isNullMatrix = true;
+                    for (int i1 = i + 1; isNullMatrix && (i1 < matrix.getHeightMainMatrix()); i1++) {
+                        if (matrix.getHorizonCandidate(i1, i + 1) != -1) {
+                            matrix.swipeRow(i, i1);
+                            countOfInterchanging++;
+
+                            int candidate = matrix.getHorizonCandidate(i, i + 1);
+                            if (candidate != i) {
+                                matrix.swipeColumn(i, candidate);
+                                countOfInterchanging++;
+                            }
+                            isNullMatrix = false;
+                        }
+                    }
+                }
+            }
+
+            if (!isNullMatrix) {
+                // делаем нули внизу
+                for (int candidateRow = i + 1; candidateRow < matrix.getHeightMainMatrix(); candidateRow++) {
+                    matrix.addRow(candidateRow, i, new Rational(1).div(matrix.getMainMatrixElement(i,i)).mlp(matrix.getMainMatrixElement(candidateRow, i)).neg());
+                }
+            }
+            // переходим к следующей ступени
+            i++;
+        }
+
+        Rational determinant = matrix.getDeterminantOfTriangleMatrix();
+
+        if (countOfInterchanging % 2 == 1){
+            determinant = determinant.mlp(new Rational(-1));
+        }
+
+        return determinant;
+
     }
 
     public Matrix getTriangleMatrix() throws IllegalArgumentException{
@@ -182,6 +250,7 @@ public class Matrix implements MatrixOperators {
         boolean isNullMatrix = false;
 
         while ((!isNullMatrix) && (i < Math.min(matrix.getHeightMainMatrix(), matrix.getWidthMainMatrix()))) {
+            System.out.println(matrix.toString());
             if (matrix.getHorizonCandidate(i, i) != -1) {
                 //не нули по горизонтали
                 matrix.swipeColumn(i, matrix.getHorizonCandidate(i, i));

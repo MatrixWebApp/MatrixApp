@@ -30,4 +30,50 @@ public class RationalToken extends Token {
     }
 
 
+    public Token mlp(Token token) throws IllegalArgumentException{
+        // right operand is rational
+        if (Type.Rational.compareTo(token.type) == 0) {
+            return new RationalToken(
+                    this.rational.mlp(((RationalToken) token).getRational())
+            );
+        }
+        // right operand is matrix
+        if (Type.Matrix.compareTo(token.type) == 0){
+            return token.mlp(this);
+
+        }
+
+        throw new IllegalArgumentException("invalid operands in mlp");
+    }
+
+    public Token add(Token token) throws IllegalArgumentException{
+        // right operand is rational
+        if (Type.Rational.compareTo(token.type) == 0) {
+            return new RationalToken(
+                    this.rational.add(((RationalToken) token).getRational())
+            );
+        }
+        throw new IllegalArgumentException("invalid operands in mlp");
+    }
+
+    public Token sub(Token token) throws IllegalArgumentException{
+        // right operand is rational
+        if (Type.Rational.compareTo(token.type) == 0) {
+            return new RationalToken(
+                    this.rational.add(((RationalToken) token).getRational())
+            );
+        }
+        throw new IllegalArgumentException("invalid operands in mlp");
+    }
+
+    public Token pow(Token token) throws IllegalArgumentException{
+        // right operand is rational
+        if (Type.Rational.compareTo(token.type) == 0) {
+            return new RationalToken(
+                    this.rational.pow(((RationalToken) token).getRational())
+            );
+        }
+        throw new IllegalArgumentException("invalid operands in mlp");
+    }
+
 }

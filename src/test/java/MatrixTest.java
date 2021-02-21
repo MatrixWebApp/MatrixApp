@@ -525,6 +525,19 @@ class MatrixTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void test37(){
+        JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix7");
+        JsonElement in = json.getAsJsonObject().get("in");
+
+        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Rational expected = new Rational(-1854);
+        assertEquals(expected, actual);
+    }
+
+
+
 //    @Test
 //    @Test
 //    @Test

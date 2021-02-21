@@ -54,12 +54,14 @@ public class MatrixToken extends Token {
 
 
     public Token mlp(Token token) throws IllegalArgumentException{
+        // token is matrix
         if (Type.Matrix.compareTo(token.type) == 0) {
             return new MatrixToken(
                     matrix.mlp(((MatrixToken) token).matrix)
             );
         }
-        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
+        // token is rational
+        if (Type.Rational.compareTo(token.type) == 0){
             return new MatrixToken(
                     matrix.mlp(((RationalToken) token).getRational())
             );

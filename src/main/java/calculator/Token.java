@@ -20,6 +20,7 @@ public class Token {
     }
 
     public Token sub(Token token) throws IllegalArgumentException {
+        new IllegalArgumentException("this method is not implemented");
         return null;
     }
 

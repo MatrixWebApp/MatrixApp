@@ -50,6 +50,7 @@ public class Operators {
             default:
                 throw new IllegalArgumentException("Didn't define operator for the arguments in calculate\n");
         }
+        assert result != null;
         return result;
     }
 
