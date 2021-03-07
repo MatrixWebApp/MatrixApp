@@ -243,6 +243,64 @@
         ]
       }
     }]
-  }
+  },
+  "evaluate5": {
+    "in": [{
+      "name": "A",
+      "type": "Matrix",
+      "value": {
+        "main":[
+          [{"numerator": 34}, {"numerator": 34},{"numerator": 343}],
+          [{"numerator": 3}, {"numerator": 3},{"numerator": 3}],
+          [{"numerator": 4}, {"numerator": 2},{"numerator": 1}]
+        ]
+      }
+    }],
+    "out": {
+      "main":[
+        [{"numerator": 34}, {"numerator": 3},{"numerator": 4}],
+        [{"numerator": 34}, {"numerator": 3},{"numerator": 2}],
+        [{"numerator": 343}, {"numerator": 3},{"numerator": 1}]
+      ]
+    }
+  },
+  "evaluate6": {
+    "in": [{
+      "name": "A",
+      "type": "Matrix",
+      "value": {
+        "main":[
+          [{"numerator": 3}, {"numerator": 2},{"numerator": 3},{"numerator": 4}],
+          [{"numerator": 4}, {"numerator": 4},{"numerator": 3},{"numerator": 2}],
+          [{"numerator": 1}, {"numerator": 4},{"numerator": 4},{"numerator": 3}],
+          [{"numerator": 2}, {"numerator": 3},{"numerator": 1},{"numerator": 1}]
+        ]
+      }
+    }
+    ],
+    "out": {
+      "main":[
+        [{"numerator": 3}, {"numerator": 2},{"numerator": 3},{"numerator": 4}],
+        [{"numerator": 0}, {"numerator": 4, "denominator": 3} ,{"numerator": -1},{"numerator": -10, "denominator": 3}],
+        [{"numerator": 0}, {"numerator": 0},{"numerator": 11, "denominator": 2},{"numerator": 10}],
+        [{"numerator": 0}, {"numerator":0},{"numerator": 0},{"numerator": 45, "denominator": 22}]
+      ]
+    }
 
+  },
+  "evaluate7": {
+    "in": [{
+      "name": "A",
+      "type": "Matrix",
+      "value": {
+        "main":[
+          [{"numerator": 3}, {"numerator": 2},{"numerator": 3},{"numerator": 4}],
+          [{"numerator": 0}, {"numerator": 4},{"numerator": 3},{"numerator": 2}],
+          [{"numerator": 1}, {"numerator": 4},{"numerator": 4},{"numerator": 3}],
+          [{"numerator": 0}, {"numerator": 0},{"numerator": 0},{"numerator": 0}]
+        ]
+      }
+    }]
+
+  }
 }

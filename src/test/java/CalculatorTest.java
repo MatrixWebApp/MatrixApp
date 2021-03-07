@@ -13,6 +13,7 @@ import gsonParser.GsonVariableParser;
 import matrix.Matrix;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import rational.Rational;
 
 import java.io.File;
 import java.io.IOException;
@@ -36,7 +37,7 @@ CalculatorTest {
     @BeforeEach
     public void setup() {
         // ./src/main/resources/matrixTest
-        path = Paths.get(".", "src", "main", "resources", "test", "calculator.json");
+        path = Paths.get("..", "main", "resources", "test", "calculator.json");
         testJson = getJson(path);
 
     }
@@ -117,214 +118,213 @@ CalculatorTest {
         Calculator calculator = new Calculator(variables);
 
         Token actual = calculator.evaluate("det(A*10-9*A)+1854*(-1)^4434");
-        Token expected =  new RationalToken(0);
-        assertEquals(expected, actual);
-        assertEquals(expected, actual);
+        Token expected = new RationalToken(0);
 
         assertEquals(expected, actual);
     }
-//
-//    @Test
-//    void evaluate5() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Matrix actual = (Matrix) calculator.evaluate("trans(A)");
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName(1)));
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void evaluate6() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Matrix actual = (Matrix) calculator.evaluate("triangle(A)");
-//
-//        Matrix expected = GsonParser.matrixFromJson(getJsonStringOut(getMethodName(1)));
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void evaluate7() {
-//
-//        ArrayList<Variable> variables = getInVariables();
-//
-//
-//        Calculator calculator = new Calculator(variables);
-//
-//        Rational actual = (Rational) calculator.evaluate("rank(A*10)");
-//
-//        Rational expected = new Rational(3);
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void evaluate8() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//
-//        Rational actual = (Rational) calculator.evaluate("(5/4)^(-8)");
-//        Rational expected = new Rational(65536, 390625);
-//
-//        assertEquals(actual, expected);
-//
-//    }
-//
-//    @Test
-//    void exception1() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("323*43/23");
-//
-//        String actual = calculator.status;
-//        String expected = "OK";
-//
-//        assertEquals(expected, actual);
-//
-//
-//    }
-//
-//    @Test
-//    void exception2() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("rank(A)");
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception3() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("rank(0/0)");
-//
-//        String actual = calculator.status;
-//        String expected = "/ by zero";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception4() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("454+)");
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception5() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("454+");
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception6() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("454+(");
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception7() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("454+3(");
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception8() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        System.out.println(calculator.evaluate("4^"));
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception9() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        System.out.println(calculator.evaluate("tra"));
-//
-//        String actual = calculator.status;
-//        String expected = "wrong input";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception10() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        System.out.println(calculator.evaluate("trans(34)"));
-//
-//        String actual = calculator.status;
-//        String expected = "wrong argument in trans(A)";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception11() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        System.out.println(calculator.evaluate("inverse(34)"));
-//
-//        String actual = calculator.status;
-//        String expected = "wrong argument in inverse(A)";
-//
-//        assertEquals(expected, actual);
-//    }
-//
-//    @Test
-//    void exception12() {
-//
-//        Calculator calculator = new Calculator(new ArrayList<>());
-//        calculator.evaluate("triangle(432343423)");
-//
-//        String actual = calculator.status;
-//        String expected = "wrong argument in triangle(A)";
-//
-//        assertEquals(expected, actual);
-//    }
+
+    @Test
+    void evaluate5() {
+
+        JsonElement json = testJson.getAsJsonObject().get("evaluate5");
+        ArrayList<Variable> variables = getVariableArray(json);
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("trans(A)");
+        Token expected = new MatrixToken(GsonParser.matrixFromJson(out));
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void evaluate6() {
+
+        JsonElement json = testJson.getAsJsonObject().get("evaluate6");
+        ArrayList<Variable> variables = getVariableArray(json);
+        JsonElement out = json.getAsJsonObject().get("out");
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("triangle(A)");
+        Token expected = new MatrixToken(GsonParser.matrixFromJson(out));
+
+        assertEquals(expected, actual);
+
+    }
+
+    @Test
+    void evaluate7() {
+        JsonElement json = testJson.getAsJsonObject().get("evaluate7");
+        ArrayList<Variable> variables = getVariableArray(json);
+
+        Calculator calculator = new Calculator(variables);
+
+        Token actual = calculator.evaluate("rank(A*10)");
+
+        Token expected = new RationalToken(new Rational(3));
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void evaluate8() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+
+        Token actual = calculator.evaluate("(5/4)^(-8)");
+        Token expected = new RationalToken(new Rational(65536, 390625));
+
+        assertEquals(actual, expected);
+
+    }
+
+    @Test
+    void exception1() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("323*43/23");
+
+        String actual = calculator.status;
+        String expected = "OK";
+
+        assertEquals(expected, actual);
+
+
+    }
+
+    @Test
+    void exception2() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("rank(A)");
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception3() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("rank(0/0)");
+
+        String actual = calculator.status;
+        String expected = "/ by zero";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception4() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("454+)");
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception5() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("454+");
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception6() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("454+(");
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception7() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("454+3(");
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception8() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        System.out.println(calculator.evaluate("4^"));
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception9() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        System.out.println(calculator.evaluate("tra"));
+
+        String actual = calculator.status;
+        String expected = "wrong input";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception10() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        System.out.println(calculator.evaluate("trans(34)"));
+
+        String actual = calculator.status;
+        String expected = "wrong argument in trans(A)";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception11() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        System.out.println(calculator.evaluate("inverse(34)"));
+
+        String actual = calculator.status;
+        String expected = "wrong argument in inverse(A)";
+
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void exception12() {
+
+        Calculator calculator = new Calculator(new ArrayList<>());
+        calculator.evaluate("triangle(432343423)");
+
+        String actual = calculator.status;
+        String expected = "wrong argument in triangle(A)";
+
+        assertEquals(expected, actual);
+    }
 //
 //    @Test
 //    void exception13() {
@@ -417,7 +417,7 @@ CalculatorTest {
 //
 //        assertEquals(expected, actual);
 //    }
-//
+
 //    @Test
 //    void exception20() {
 //

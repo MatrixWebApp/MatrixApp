@@ -60,11 +60,22 @@ public class RationalToken extends Token {
         // right operand is rational
         if (Type.Rational.compareTo(token.type) == 0) {
             return new RationalToken(
-                    this.rational.add(((RationalToken) token).getRational())
+                    this.rational.sub(((RationalToken) token).getRational())
             );
         }
         throw new IllegalArgumentException("invalid operands in mlp");
     }
+
+    public Token div(Token token) throws  IllegalArgumentException{
+        // right operand is rational
+        if (Type.Rational.compareTo(token.type) == 0) {
+            return new RationalToken(
+                    this.rational.div(((RationalToken) token).getRational())
+            );
+        }
+        throw new IllegalArgumentException("invalid operands in div");
+    }
+
 
     public Token pow(Token token) throws IllegalArgumentException{
         // right operand is rational

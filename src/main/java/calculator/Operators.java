@@ -47,8 +47,12 @@ public class Operators {
             case "^":
                 result = leftO.pow(rightO);
                 break;
+            case "/":
+                result = leftO.div(rightO);
+                break;
             default:
-                throw new IllegalArgumentException("Didn't define operator for the arguments in calculate\n");
+                throw new IllegalArgumentException("Didn't define operator" + "(" + operator + ") " +
+                        "for the arguments in calculate\n");
         }
         assert result != null;
         return result;

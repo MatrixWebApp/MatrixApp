@@ -2,7 +2,7 @@
   "name": "A",
   "type": "Matrix",
   "value": {
-      "mainMatrix":[
+      "main":[
         [{"numerator": 3}, {"numerator": 2},{"numerator": 3},{"numerator": 4}],
         [{"numerator": 4}, {"numerator": 4},{"numerator": 3},{"numerator": 2}],
         [{"numerator": 1}, {"numerator": 4},{"numerator": 4},{"numerator": 3}],

@@ -26,7 +26,7 @@ class MatrixTest {
     @BeforeEach
     public void setup(){
         // ./src/main/resources/matrixTest
-        path = Paths.get("." ,"src","main","resources","test", "matrix.json");
+        path = Paths.get( "..","main","resources","test", "matrix.json");
         testJson = getJson(path);
 
     }
