@@ -20,11 +20,15 @@ public class Token {
     }
 
     public Token sub(Token token) throws IllegalArgumentException {
-        new IllegalArgumentException("this method is not implemented");
         return null;
     }
 
+
     public Token mlp(Token token) throws IllegalArgumentException {
+        return null;
+    }
+
+    public Token div(Token token) throws IllegalArgumentException {
         return null;
     }
 

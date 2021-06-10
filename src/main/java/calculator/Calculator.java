@@ -63,7 +63,7 @@ public class Calculator extends Operators {
         }
         catch(Exception exc){
             status = exc.getMessage();
-            return new Token();
+            return null;
         }
     }
     // парсинг выражения на лексемы
@@ -152,7 +152,7 @@ public class Calculator extends Operators {
             if (isOperator(token)) {            // если token - оператор
                 if (isBinaryOperator(token)) {
                     try {
-                        stack.add(calculate(stack.pop(), stack.pop(), token)); // считаем
+                        stack.add(applyToken(stack.pop(), stack.pop(), token)); // считаем
                     }
                     catch (EmptyStackException exc){
                         throw new IllegalArgumentException("wrong input");

@@ -100,68 +100,134 @@
             ]
           ]
         }
-
       }
     ],
     "out": {
-        "main": [
-          [
-            {
-              "numerator": 0,
-              "denominator": 1
-            },
-            {
-              "numerator": 0,
-              "denominator": 1
-            },
-            {
-              "numerator": 0,
-              "denominator": 1
-            }
-          ],
-          [
-            {
-              "numerator": 0,
-              "denominator": 1
-            },
-            {
-              "numerator": 0,
-              "denominator": 1
-            },
-            {
-              "numerator": 0,
-              "denominator": 1
-            }
-          ],
-          [
-            {
-              "numerator": 0,
-              "denominator": 1
-            },
-            {
-              "numerator": 0,
-              "denominator": 1
-            },
-            {
-              "numerator": 0,
-              "denominator": 1
-            }
-          ]
+      "main": [
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          },
+          {
+            "numerator": 0,
+            "denominator": 1
+          }
         ]
-      }
-    },
+      ]
+    }
+  },
   "evaluate2": {
     "in": [
       {
         "name": "A",
         "type": "Matrix",
         "value": {
-          "main":[
-            [{"numerator": 2,"denominator": 1},{"numerator": -1,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
-            [{"numerator": 6,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 2,"denominator": 1},{"numerator": 4,"denominator": 1}],
-            [{"numerator": 6,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 46,"denominator": 1},{"numerator": 8,"denominator": 1}],
-            [{"numerator": 4,"denominator": 1},{"numerator": -2,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 1,"denominator": 1}]
-
+          "main": [
+            [
+              {
+                "numerator": 2,
+                "denominator": 1
+              },
+              {
+                "numerator": -1,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 2,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 6,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 2,
+                "denominator": 1
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 6,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 46,
+                "denominator": 1
+              },
+              {
+                "numerator": 8,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": -2,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              }
+            ]
           ]
         }
       },
@@ -169,12 +235,79 @@
         "name": "B",
         "type": "Matrix",
         "value": {
-          "main":[
-            [{"numerator": 5,"denominator": 1},{"numerator": -1,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
-            [{"numerator": 6,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 4,"denominator": 1},{"numerator": 48,"denominator": 1}],
-            [{"numerator": 7,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 4,"denominator": 1},{"numerator": 8,"denominator": 1}],
-            [{"numerator": 4,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 3,"denominator": 1}]
-
+          "main": [
+            [
+              {
+                "numerator": 5,
+                "denominator": 1
+              },
+              {
+                "numerator": -1,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 2,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 6,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": 48,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 7,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": 8,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 3,
+                "denominator": 1
+              }
+            ]
           ]
         }
       },
@@ -182,25 +315,157 @@
         "name": "C",
         "type": "Matrix",
         "value": {
-          "main":[
-            [{"numerator": 3,"denominator": 1},{"numerator": -1,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
-            [{"numerator": 6,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 4,"denominator": 1},{"numerator": 48,"denominator": 1}],
-            [{"numerator": 7,"denominator": 1},{"numerator": -5,"denominator": 1},{"numerator": 4,"denominator": 1},{"numerator": 8,"denominator": 1}],
-            [{"numerator": 4,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 3,"denominator": 1}]
-
+          "main": [
+            [
+              {
+                "numerator": 3,
+                "denominator": 1
+              },
+              {
+                "numerator": -1,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 2,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 6,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": 48,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 7,
+                "denominator": 1
+              },
+              {
+                "numerator": -5,
+                "denominator": 1
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": 8,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 3,
+                "denominator": 1
+              }
+            ]
           ]
         }
       }
-
-
     ],
     "out": {
-      "main":[
-        [{"numerator": 2160,"denominator": 1079},{"numerator": -1565,"denominator": 1079},{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
-        [{"numerator": 5766,"denominator": 1079},{"numerator": -3833,"denominator": 1079},{"numerator": 2,"denominator": 1},{"numerator": 4,"denominator": 1}],
-        [{"numerator": 38694,"denominator": 1079},{"numerator": -46633,"denominator": 1079},{"numerator": 46,"denominator": 1},{"numerator": 8,"denominator": 1}],
-        [{"numerator": 3624,"denominator": 1079},{"numerator": -2326,"denominator": 1079},{"numerator": 1,"denominator": 1},{"numerator": 1,"denominator": 1}]
-
+      "main": [
+        [
+          {
+            "numerator": 2160,
+            "denominator": 1079
+          },
+          {
+            "numerator": -1565,
+            "denominator": 1079
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 5766,
+            "denominator": 1079
+          },
+          {
+            "numerator": -3833,
+            "denominator": 1079
+          },
+          {
+            "numerator": 2,
+            "denominator": 1
+          },
+          {
+            "numerator": 4,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 38694,
+            "denominator": 1079
+          },
+          {
+            "numerator": -46633,
+            "denominator": 1079
+          },
+          {
+            "numerator": 46,
+            "denominator": 1
+          },
+          {
+            "numerator": 8,
+            "denominator": 1
+          }
+        ],
+        [
+          {
+            "numerator": 3624,
+            "denominator": 1079
+          },
+          {
+            "numerator": -2326,
+            "denominator": 1079
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          },
+          {
+            "numerator": 1,
+            "denominator": 1
+          }
+        ]
       ]
     }
   },
@@ -210,39 +475,432 @@
         "name": "A",
         "type": "Matrix",
         "value": {
-          "main":[
-            [{"numerator": 2,"denominator": 1},{"numerator": -1,"denominator": 4},{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1}],
-            [{"numerator": 6,"denominator": 1},{"numerator": -3,"denominator": 1},{"numerator": 2,"denominator": 1},{"numerator": 4,"denominator": 1}],
-            [{"numerator": 6,"denominator": 1},{"numerator": -3,"denominator": 4},{"numerator": 4,"denominator": 1},{"numerator": 8,"denominator": 1}],
-            [{"numerator": 4,"denominator": 1},{"numerator": -2,"denominator": 1},{"numerator": 1,"denominator": 1},{"numerator": 1,"denominator": 5}]
-
+          "main": [
+            [
+              {
+                "numerator": 2,
+                "denominator": 1
+              },
+              {
+                "numerator": -1,
+                "denominator": 4
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 2,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 6,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 1
+              },
+              {
+                "numerator": 2,
+                "denominator": 1
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 6,
+                "denominator": 1
+              },
+              {
+                "numerator": -3,
+                "denominator": 4
+              },
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": 8,
+                "denominator": 1
+              }
+            ],
+            [
+              {
+                "numerator": 4,
+                "denominator": 1
+              },
+              {
+                "numerator": -2,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 1
+              },
+              {
+                "numerator": 1,
+                "denominator": 5
+              }
+            ]
           ]
         }
       }
     ],
     "out": {
-      "main":[
-        [{"numerator":614,"denominator":81},{"numerator":149,"denominator":486},{"numerator":-494,"denominator":243},{"numerator": -50,"denominator": 81}],
-        [{"numerator":556,"denominator":81},{"numerator":92,"denominator":243},{"numerator":-460,"denominator":243},{"numerator": -40,"denominator": 81}],
-        [{"numerator":-4030,"denominator":243},{"numerator":-67,"denominator":1458},{"numerator":3124,"denominator":729},{"numerator": 220,"denominator":243}],
-        [{"numerator":665,"denominator":243},{"numerator":-385,"denominator":1458},{"numerator":-455,"denominator":729},{"numerator": 25,"denominator": 243}]
-
+      "main": [
+        [
+          {
+            "numerator": 614,
+            "denominator": 81
+          },
+          {
+            "numerator": 149,
+            "denominator": 486
+          },
+          {
+            "numerator": -494,
+            "denominator": 243
+          },
+          {
+            "numerator": -50,
+            "denominator": 81
+          }
+        ],
+        [
+          {
+            "numerator": 556,
+            "denominator": 81
+          },
+          {
+            "numerator": 92,
+            "denominator": 243
+          },
+          {
+            "numerator": -460,
+            "denominator": 243
+          },
+          {
+            "numerator": -40,
+            "denominator": 81
+          }
+        ],
+        [
+          {
+            "numerator": -4030,
+            "denominator": 243
+          },
+          {
+            "numerator": -67,
+            "denominator": 1458
+          },
+          {
+            "numerator": 3124,
+            "denominator": 729
+          },
+          {
+            "numerator": 220,
+            "denominator": 243
+          }
+        ],
+        [
+          {
+            "numerator": 665,
+            "denominator": 243
+          },
+          {
+            "numerator": -385,
+            "denominator": 1458
+          },
+          {
+            "numerator": -455,
+            "denominator": 729
+          },
+          {
+            "numerator": 25,
+            "denominator": 243
+          }
+        ]
       ]
     }
-
   },
   "evaluate4": {
+    "in": [
+      {
+        "name": "A",
+        "type": "Matrix",
+        "value": {
+          "main": [
+            [
+              {
+                "numerator": 34
+              },
+              {
+                "numerator": 34
+              },
+              {
+                "numerator": 343
+              }
+            ],
+            [
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 3
+              }
+            ],
+            [
+              {
+                "numerator": 4
+              },
+              {
+                "numerator": 2
+              },
+              {
+                "numerator": 1
+              }
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "evaluate5": {
+    "in": [
+      {
+        "name": "A",
+        "type": "Matrix",
+        "value": {
+          "main": [
+            [
+              {
+                "numerator": 34
+              },
+              {
+                "numerator": 34
+              },
+              {
+                "numerator": 343
+              }
+            ],
+            [
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 3
+              }
+            ],
+            [
+              {
+                "numerator": 4
+              },
+              {
+                "numerator": 2
+              },
+              {
+                "numerator": 1
+              }
+            ]
+          ]
+        }
+      }
+    ],
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 34
+          },
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": 4
+          }
+        ],
+        [
+          {
+            "numerator": 34
+          },
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": 2
+          }
+        ],
+        [
+          {
+            "numerator": 343
+          },
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": 1
+          }
+        ]
+      ]
+    }
+  },
+  "evaluate6": {
+    "in": [
+      {
+        "name": "A",
+        "type": "Matrix",
+        "value": {
+          "main": [
+            [
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 2
+              },
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 4
+              }
+            ],
+            [
+              {
+                "numerator": 4
+              },
+              {
+                "numerator": 4
+              },
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 2
+              }
+            ],
+            [
+              {
+                "numerator": 1
+              },
+              {
+                "numerator": 4
+              },
+              {
+                "numerator": 4
+              },
+              {
+                "numerator": 3
+              }
+            ],
+            [
+              {
+                "numerator": 2
+              },
+              {
+                "numerator": 3
+              },
+              {
+                "numerator": 1
+              },
+              {
+                "numerator": 1
+              }
+            ]
+          ]
+        }
+      }
+    ],
+    "out": {
+      "main": [
+        [
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": 2
+          },
+          {
+            "numerator": 3
+          },
+          {
+            "numerator": 4
+          }
+        ],
+        [
+          {
+            "numerator": 0
+          },
+          {
+            "numerator": 4,
+            "denominator": 3
+          },
+          {
+            "numerator": -1
+          },
+          {
+            "numerator": -10,
+            "denominator": 3
+          }
+        ],
+        [
+          {
+            "numerator": 0
+          },
+          {
+            "numerator": 0
+          },
+          {
+            "numerator": 11,
+            "denominator": 2
+          },
+          {
+            "numerator": 10
+          }
+        ],
+        [
+          {
+            "numerator": 0
+          },
+          {
+            "numerator": 0
+          },
+          {
+            "numerator": 0
+          },
+          {
+            "numerator": 45,
+            "denominator": 22
+          }
+        ]
+      ]
+    }
+  },
+  "evaluate7": {
     "in": [{
       "name": "A",
       "type": "Matrix",
       "value": {
         "main":[
-          [{"numerator": 34}, {"numerator": 34},{"numerator": 343}],
-          [{"numerator": 3}, {"numerator": 3},{"numerator": 3}],
-          [{"numerator": 4}, {"numerator": 2},{"numerator": 1}]
+          [{"numerator": 3}, {"numerator": 2},{"numerator": 3},{"numerator": 4}],
+          [{"numerator": 0}, {"numerator": 4},{"numerator": 3},{"numerator": 2}],
+          [{"numerator": 1}, {"numerator": 4},{"numerator": 4},{"numerator": 3}],
+          [{"numerator": 0}, {"numerator": 0},{"numerator": 0},{"numerator": 0}]
         ]
       }
-    }]
+    }
+    ]
   }
-
 }

@@ -31,7 +31,7 @@ public class Operators {
         return operators.containsKey(operator);
     }
 
-    static protected Token calculate(Token rightO, Token leftO, String operator){
+    static protected Token applyToken(Token rightO, Token leftO, String operator){
         Token result;
 
         switch(operator){
@@ -46,6 +46,9 @@ public class Operators {
                 break;
             case "^":
                 result = leftO.pow(rightO);
+                break;
+            case "/":
+                result = leftO.div(rightO);
                 break;
             default:
                 throw new IllegalArgumentException("Didn't define operator for the arguments in calculate\n");

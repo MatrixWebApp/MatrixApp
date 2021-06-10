@@ -10,11 +10,11 @@ import rational.Rational;
 
 // parser for Matrix, Rational
 public class GsonParser {
-    private static Gson gsonMatrixParser;
-    private static Gson gsonRationalParser;
-    private static Gson gsonVariableParser;
+    private static final Gson gsonMatrixParser;
+    private static final Gson gsonRationalParser;
+    private static final Gson gsonVariableParser;
 
-    private static JsonParser parser;
+    private static final JsonParser parser;
 
     static {
         gsonRationalParser = new GsonBuilder()
