@@ -6,7 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import rational.Rational;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,7 +13,8 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 class MatrixTest {
@@ -26,7 +26,7 @@ class MatrixTest {
     @BeforeEach
     public void setup(){
         // ./src/main/resources/matrixTest
-        path = Paths.get("." ,"src","main","resources","test", "matrix.json");
+        path = Paths.get( "src", "main", "resources","test", "matrix.json");
         testJson = getJson(path);
 
     }
@@ -367,7 +367,7 @@ class MatrixTest {
     }
 
     @Test
-    public void test261(){
+    public void test26(){
         JsonElement json =  testJson.getAsJsonObject().get("rank7");
         JsonElement in = json.getAsJsonObject().get("in");
 

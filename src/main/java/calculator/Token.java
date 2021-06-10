@@ -10,6 +10,7 @@ import java.util.Objects;
 public class Token {
     public Type type;
 
+
     public enum Type{
         Matrix,
         Rational
@@ -33,6 +34,11 @@ public class Token {
     }
 
     public Token pow(Token token) throws IllegalArgumentException {
+        return null;
+    }
+
+
+    public Token div(Token rightO) throws IllegalArgumentException{
         return null;
     }
 

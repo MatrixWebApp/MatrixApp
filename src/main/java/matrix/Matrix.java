@@ -182,7 +182,6 @@ public class Matrix implements MatrixOperators {
         boolean isNullMatrix = false;
 
         while ((!isNullMatrix) && (i < Math.min(matrix.getHeightMainMatrix(), matrix.getWidthMainMatrix()))) {
-            System.out.println(matrix.toString());
             if (matrix.getHorizonCandidate(i, i) != -1) {
                 //не нули по горизонтали
                 int candidate =  matrix.getHorizonCandidate(i, i);
@@ -250,7 +249,6 @@ public class Matrix implements MatrixOperators {
         boolean isNullMatrix = false;
 
         while ((!isNullMatrix) && (i < Math.min(matrix.getHeightMainMatrix(), matrix.getWidthMainMatrix()))) {
-            System.out.println(matrix.toString());
             if (matrix.getHorizonCandidate(i, i) != -1) {
                 //не нули по горизонтали
                 matrix.swipeColumn(i, matrix.getHorizonCandidate(i, i));
@@ -475,7 +473,6 @@ public class Matrix implements MatrixOperators {
             A.mlpRow(i, new Rational(1).div(A.getMainMatrixElement(i,i)));
         }
 
-        System.out.println(A);
 
         return new Matrix(A.augmentedMatrix);
 
