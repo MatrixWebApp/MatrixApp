@@ -64,7 +64,7 @@ CalculatorTest {
 
         Calculator calculator = new Calculator(variables);
 
-        Token actual = calculator.evaluate("A-B + 3");
+        Token actual = calculator.evaluate("A-B");
         Token expected = new MatrixToken(GsonParser.matrixFromJson(out));
 
         assertEquals(expected, actual);
