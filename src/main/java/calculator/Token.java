@@ -7,60 +7,54 @@ import matrix.Matrix;
 
 import java.util.Objects;
 
-public class Token {
+public class Token{
     public Type type;
-
 
     public enum Type{
         Matrix,
         Rational
     }
 
-    public Token add(Token token) {
-        return null;
+
+    public Token add(Token token) throws IllegalArgumentException{
+        return add(token);
     }
 
     public Token sub(Token token) throws IllegalArgumentException {
-        return null;
+        return sub(token);
     }
 
 
     public Token mlp(Token token) throws IllegalArgumentException {
-        return null;
+        return mlp(token);
     }
 
     public Token div(Token token) throws IllegalArgumentException {
-        return null;
+        return div(token);
     }
 
     public Token pow(Token token) throws IllegalArgumentException {
-        return null;
-    }
-
-
-    public Token div(Token rightO) throws IllegalArgumentException{
-        return null;
+        return pow(token);
     }
 
     public Token getInverseMatrix() {
-        return null;
+        return getInverseMatrix();
     }
 
     public Token getDeterminant() {
-        return null;
+        return getDeterminant();
     }
 
     public Token getTransposeMatrix() {
-        return null;
+        return getTransposeMatrix();
     }
 
     public Token getTriangleMatrix() {
-        return null;
+        return getTransposeMatrix();
     }
 
-
     public Token getRankOfMatrix() {
-        return null;
+        return getRankOfMatrix();
     }
 
     @Override

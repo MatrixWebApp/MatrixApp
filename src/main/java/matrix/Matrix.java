@@ -1,5 +1,6 @@
 package matrix;
 
+import calculator.Token;
 import calculator.services.RationalVar;
 import calculator.services.Solution;
 import calculator.services.VectorSet;

@@ -1,6 +1,3 @@
-
-
-
 import calculator.Calculator;
 import calculator.Token;
 import calculator.services.MatrixToken;
@@ -9,20 +6,14 @@ import calculator.services.Variable;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import gsonParser.GsonParser;
-import gsonParser.GsonVariableParser;
-import matrix.Matrix;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -116,7 +107,7 @@ CalculatorTest {
         Calculator calculator = new Calculator(variables);
 
         Token actual = calculator.evaluate("det(A*10-9*A)+1854*(-1)^4434");
-        Token expected =  new RationalToken(0);
+        Token expected = new RationalToken(0);
         assertEquals(expected, actual);
 
     }
@@ -186,7 +177,7 @@ CalculatorTest {
 //        assertEquals(expected, actual);
 //
 //
-//    }
+//    }K
 //
 //    @Test
 //    void exception2() {
