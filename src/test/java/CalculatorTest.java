@@ -1,7 +1,7 @@
 import calculator.Calculator;
 import calculator.Token;
 import calculator.services.MatrixToken;
-import calculator.services.RationalToken;
+import calculator.services.FractionToken;
 import calculator.services.Variable;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -107,7 +107,7 @@ CalculatorTest {
         Calculator calculator = new Calculator(variables);
 
         Token actual = calculator.evaluate("det(A*10-9*A)+1854*(-1)^4434");
-        Token expected = new RationalToken(0);
+        Token expected = new FractionToken(0);
         assertEquals(expected, actual);
 
     }
@@ -148,7 +148,7 @@ CalculatorTest {
         Calculator calculator = new Calculator(variables);
 
         Token actual = calculator.evaluate("rank(A*10)");
-        RationalToken expected = new RationalToken(3);
+        FractionToken expected = new FractionToken(3);
 
         assertEquals(expected, actual);
     }
@@ -159,7 +159,7 @@ CalculatorTest {
         Calculator calculator = new Calculator(new ArrayList<>());
 
         Token actual = calculator.evaluate("(5/4)^(-8)");
-        RationalToken expected = new RationalToken(65536, 390625);
+        FractionToken expected = new FractionToken(65536, 390625);
 
         assertEquals(actual, expected);
 

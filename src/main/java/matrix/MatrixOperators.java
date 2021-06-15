@@ -1,18 +1,18 @@
 package matrix;
 
 
-import rational.Rational;
+import fraction.Fraction;
 
 public interface MatrixOperators {
     public Matrix add(Matrix matrix);
-    public Matrix add(Rational rational);
+    public Matrix add(Fraction fraction);
     public Matrix sub(Matrix matrix);
-    public Matrix sub(Rational rational);
+    public Matrix sub(Fraction fraction);
     public Matrix mlp(Matrix matrix);
-    public Matrix mlp(Rational rational);
+    public Matrix mlp(Fraction fraction);
     public Matrix div(Matrix matrix);
-    public Matrix div(Rational rational);
-    public Matrix pow(Rational rational);
+    public Matrix div(Fraction fraction);
+    public Matrix pow(Fraction fraction);
     public Matrix getTransposeMatrix();
     public Matrix getInverseMatrix();
     public Matrix toIMatrix();

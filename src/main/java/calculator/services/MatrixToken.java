@@ -2,7 +2,7 @@ package calculator.services;
 
 import calculator.Token;
 import matrix.Matrix;
-import rational.Rational;
+import fraction.Fraction;
 
 public class MatrixToken extends Token {
 
@@ -29,10 +29,10 @@ public class MatrixToken extends Token {
             );
         }
 
-        // I think it's bad idea to add Matrix and rational
-//        if (Type.Rational.compareTo(token.type) == 0){
+        // I think it's bad idea to add Matrix and fraction
+//        if (Type.Fraction.compareTo(token.type) == 0){
 //            return new MatrixToken(
-//                    matrix.add(((RationalToken) token).rational)
+//                    matrix.add(((FractionToken) token).fraction)
 //            );
 //        }
 
@@ -45,9 +45,9 @@ public class MatrixToken extends Token {
                     matrix.sub(((MatrixToken) token).matrix)
             );
         }
-        // I think it's bad idea to sub Matrix and rational
-//        if ((type.compareTo(Type.Rational) == 0) && (token.type.compareTo(Type.Rational) == 0)) {
-//            return ((Rational) this).sub((Rational) token);
+        // I think it's bad idea to sub Matrix and fraction
+//        if ((type.compareTo(Type.Fraction) == 0) && (token.type.compareTo(Type.Fraction) == 0)) {
+//            return ((Fraction) this).sub((Fraction) token);
 //        }
         throw new IllegalArgumentException("invalid operands in sub");
     }
@@ -60,10 +60,10 @@ public class MatrixToken extends Token {
                     matrix.mlp(((MatrixToken) token).matrix)
             );
         }
-        // token is rational
-        if (Type.Rational.compareTo(token.type) == 0){
+        // token is fraction
+        if (Type.Fraction.compareTo(token.type) == 0){
             return new MatrixToken(
-                    matrix.mlp(((RationalToken) token).getRational())
+                    matrix.mlp(((FractionToken) token).getFraction())
             );
         }
 
@@ -71,12 +71,12 @@ public class MatrixToken extends Token {
     }
 
     public Token pow(Token token) throws IllegalArgumentException {
-        if (Type.Rational.compareTo(token.type) == 0) {
-            if (((RationalToken) token).getRational().getDenominator() != 1) {
+        if (Type.Fraction.compareTo(token.type) == 0) {
+            if (((FractionToken) token).getFraction().getDenominator() != 1) {
                 throw new IllegalArgumentException("invalid power in pow");
             }
             return new MatrixToken(
-                    matrix.pow(((RationalToken) token).getRational())
+                    matrix.pow(((FractionToken) token).getFraction())
             );
         }
         throw new IllegalArgumentException("invalid argument in pow");
@@ -91,7 +91,7 @@ public class MatrixToken extends Token {
 
     public Token getDeterminant(){
         if (this.type != Token.Type.Matrix) throw new IllegalArgumentException("wrong argument in det(A)");
-        return new RationalToken(
+        return new FractionToken(
                 matrix.getDeterminantByTriangleMatrix()
         );
     }
@@ -109,7 +109,7 @@ public class MatrixToken extends Token {
     }
 
     public Token getRankOfMatrix(){
-        return new RationalToken(
+        return new FractionToken(
                 matrix.getRank()
         );
     }

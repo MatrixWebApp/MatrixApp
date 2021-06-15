@@ -2,7 +2,7 @@ package calculator;
 
 
 
-import calculator.services.RationalToken;
+import calculator.services.FractionToken;
 import calculator.services.Variable;
 
 import java.util.ArrayList;
@@ -161,7 +161,7 @@ public class Calculator extends Operators {
                     stack.add(calculate(stack.pop(), token)); // token - функция
                 }
             } else if (isNumber(token)) {    // если token - число
-                stack.add(new RationalToken(toInt(token)));
+                stack.add(new FractionToken(toInt(token)));
             } else if (containsKey(token)){
                 if (getToken(token) == null) throw new NullPointerException("unknown variable in input");
                 stack.add(get(token));

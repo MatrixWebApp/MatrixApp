@@ -3,22 +3,22 @@ package gsonParser;
 import calculator.services.Variable;
 import com.google.gson.*;
 import gsonParser.converter.MatrixConverter;
-import gsonParser.converter.RationalConverter;
+import gsonParser.converter.FractionConverter;
 import gsonParser.converter.VariableConverter;
 import matrix.Matrix;
-import rational.Rational;
+import fraction.Fraction;
 
-// parser for Matrix, Rational
+// parser for Matrix, Fraction
 public class GsonParser {
     private static final Gson gsonMatrixParser;
-    private static final Gson gsonRationalParser;
+    private static final Gson gsonFractionParser;
     private static final Gson gsonVariableParser;
 
     private static final JsonParser parser;
 
     static {
-        gsonRationalParser = new GsonBuilder()
-                .registerTypeAdapter(Rational.class, new RationalConverter())
+        gsonFractionParser = new GsonBuilder()
+                .registerTypeAdapter(Fraction.class, new FractionConverter())
                 .create();
         gsonMatrixParser = new GsonBuilder()
                 .registerTypeAdapter(Matrix.class, new MatrixConverter())
@@ -34,8 +34,8 @@ public class GsonParser {
         return gsonMatrixParser.fromJson(json, Matrix.class);
     }
 
-    static public Rational rationalFromJson(JsonElement json){
-        return gsonRationalParser.fromJson(json, Rational.class);
+    static public Fraction fractionFromJson(JsonElement json){
+        return gsonFractionParser.fromJson(json, Fraction.class);
     }
 
     static public JsonElement toJson(Matrix matrix){
@@ -43,8 +43,8 @@ public class GsonParser {
         return parser.parse(json);
     }
 
-    static public JsonElement toJson(Rational rational){
-        String json = gsonRationalParser.toJson(rational);
+    static public JsonElement toJson(Fraction fraction){
+        String json = gsonFractionParser.toJson(fraction);
         return parser.parse(json);
     }
 

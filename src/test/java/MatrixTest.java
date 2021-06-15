@@ -4,7 +4,7 @@ import gsonParser.GsonParser;
 import matrix.Matrix;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import rational.Rational;
+import fraction.Fraction;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -110,7 +110,7 @@ class MatrixTest {
         Matrix actual = GsonParser.matrixFromJson(in);
         Matrix expected = GsonParser.matrixFromJson(out);
 
-        actual.addRow(0,1, new Rational(1,1));
+        actual.addRow(0,1, new Fraction(1,1));
 
         assertEquals(expected, actual);
     }
@@ -125,7 +125,7 @@ class MatrixTest {
         Matrix actual = GsonParser.matrixFromJson(in);
         Matrix expected = GsonParser.matrixFromJson(out);
 
-        actual.mlpRow(1, new Rational(1,3));
+        actual.mlpRow(1, new Fraction(1,3));
 
         assertEquals(expected, actual);
     }
@@ -135,8 +135,8 @@ class MatrixTest {
         JsonElement json = testJson.getAsJsonObject().get("determinantOfTriangleMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantOfTriangleMatrix();
-        Rational expected = new Rational(45, 28);
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantOfTriangleMatrix();
+        Fraction expected = new Fraction(45, 28);
 
         assertEquals(expected, actual);
     }
@@ -382,8 +382,8 @@ class MatrixTest {
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix1");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
-        Rational expected = new Rational(0);
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Fraction expected = new Fraction(0);
 
         assertEquals(expected, actual);
     }
@@ -393,9 +393,9 @@ class MatrixTest {
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix2");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
 
-        Rational expected = new Rational(-1034);
+        Fraction expected = new Fraction(-1034);
         assertEquals(expected, actual);
     }
 
@@ -404,8 +404,8 @@ class MatrixTest {
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix3");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
-        Rational expected = new Rational(-42);
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Fraction expected = new Fraction(-42);
 
         assertEquals(expected, actual);
     }
@@ -415,8 +415,8 @@ class MatrixTest {
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix4");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
-        Rational expected = new Rational(24);
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Fraction expected = new Fraction(24);
 
         assertEquals(expected, actual);
     }
@@ -436,8 +436,8 @@ class MatrixTest {
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix6");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
-        Rational expected = new Rational(0);
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Fraction expected = new Fraction(0);
         assertEquals(expected, actual);
     }
 
@@ -531,8 +531,8 @@ class MatrixTest {
         JsonElement json =  testJson.getAsJsonObject().get("determinantByTriangleMatrix7");
         JsonElement in = json.getAsJsonObject().get("in");
 
-        Rational actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
-        Rational expected = new Rational(-1854);
+        Fraction actual = GsonParser.matrixFromJson(in).getDeterminantByTriangleMatrix();
+        Fraction expected = new Fraction(-1854);
         assertEquals(expected, actual);
     }
 

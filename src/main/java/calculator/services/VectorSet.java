@@ -2,19 +2,19 @@ package calculator.services;
 
 
 import matrix.Matrix;
-import rational.Rational;
+import fraction.Fraction;
 
 import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class VectorSet {
-    public TreeMap<String, ArrayList<Rational>> vectors = new TreeMap<>();
+    public TreeMap<String, ArrayList<Fraction>> vectors = new TreeMap<>();
 
 
     // basis - имена базисных векторов
     public String getDecompositionByBasis(ArrayList<String> basisVectorNames){
         StringBuilder result = new StringBuilder();
-        ArrayList<ArrayList<Rational>> mainMatrix = new ArrayList<>();
+        ArrayList<ArrayList<Fraction>> mainMatrix = new ArrayList<>();
         for (String name: basisVectorNames){
             mainMatrix.add(vectors.get(name));
         }
@@ -28,7 +28,7 @@ public class VectorSet {
         for (String name: vectors.keySet()){
             result.append(name + " = ");
 
-            ArrayList<ArrayList<Rational>> augmentedMatrix = new ArrayList<>();
+            ArrayList<ArrayList<Fraction>> augmentedMatrix = new ArrayList<>();
             augmentedMatrix.add(vectors.get(name));
             augmentedMatrix = getTransposeList(augmentedMatrix);
 
@@ -46,7 +46,7 @@ public class VectorSet {
         return result.toString();
     }
 
-    public void addVector(String name, ArrayList<Rational> value){
+    public void addVector(String name, ArrayList<Fraction> value){
         vectors.put(name, value);
     }
 
@@ -64,7 +64,7 @@ public class VectorSet {
         return result.toString();
     }
 
-    public ArrayList<ArrayList<Rational>> getTransposeList(ArrayList<ArrayList<Rational>> list){
+    public ArrayList<ArrayList<Fraction>> getTransposeList(ArrayList<ArrayList<Fraction>> list){
         return (new Matrix(list).getTransposeMatrix().mainMatrix);
     }
 }

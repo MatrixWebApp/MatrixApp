@@ -1,14 +1,14 @@
 package calculator.services;
 
 
-import rational.Rational;
+import fraction.Fraction;
 
 import java.util.List;
 import java.util.TreeMap;
 
 public class Solution {
-    public TreeMap<String, List<RationalVar>> independentVar = new TreeMap<>();
-    public TreeMap<String, List<RationalVar>> dependentVar = new TreeMap<>();
+    public TreeMap<String, List<FractionVar>> independentVar = new TreeMap<>();
+    public TreeMap<String, List<FractionVar>> dependentVar = new TreeMap<>();
     public boolean isExist;
 
     public Solution(boolean isExist){
@@ -25,10 +25,10 @@ public class Solution {
         for (String var: independentVar.keySet()) {
             result.append(var + " = ");
             for (int i = 0; i < independentVar.get(var).size(); i++) {
-                RationalVar rationalVar = independentVar.get(var).get(i);
-                if (!new Rational(0).equals(rationalVar.value)) {
-                    result.append(rationalVar.value+
-                            (rationalVar.name.compareTo("") == 0 ? "" : "*" + rationalVar.name) +
+                FractionVar fractionVar = independentVar.get(var).get(i);
+                if (!new Fraction(0).equals(fractionVar.value)) {
+                    result.append(fractionVar.value+
+                            (fractionVar.name.compareTo("") == 0 ? "" : "*" + fractionVar.name) +
                             " + ");
                 }
             }

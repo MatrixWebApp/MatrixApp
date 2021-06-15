@@ -1,17 +1,17 @@
 package matrix;
 
 import calculator.Token;
-import calculator.services.RationalVar;
+import calculator.services.FractionVar;
 import calculator.services.Solution;
 import calculator.services.VectorSet;
-import rational.Rational;
+import fraction.Fraction;
 
 import java.util.*;
 
 public class Matrix implements MatrixOperators {
 
-    public ArrayList<ArrayList<Rational>> mainMatrix = new ArrayList<>();
-    private ArrayList<ArrayList<Rational>> augmentedMatrix = new ArrayList<>();
+    public ArrayList<ArrayList<Fraction>> mainMatrix = new ArrayList<>();
+    private ArrayList<ArrayList<Fraction>> augmentedMatrix = new ArrayList<>();
 
     private ArrayList<String> columnNames = new ArrayList<>();
     private ArrayList<String> rowNames = new ArrayList<>();
@@ -32,7 +32,7 @@ public class Matrix implements MatrixOperators {
         for (int i = 0; i < height; i++){
             mainMatrix.add(new ArrayList<>());
             for (int j = 0; j < width; j++){
-                mainMatrix.get(i).add(new Rational(0));
+                mainMatrix.get(i).add(new Fraction(0));
             }
         }
     }
@@ -48,28 +48,28 @@ public class Matrix implements MatrixOperators {
         for (int i = 0; i < augmentedHeight; i++){
             augmentedMatrix.add(new ArrayList<>());
             for (int j = 0; j < augmentedWidth; j++){
-                augmentedMatrix.get(i).add(new Rational(0));
+                augmentedMatrix.get(i).add(new Fraction(0));
             }
         }
     }
 
 
-    public Matrix(ArrayList<ArrayList<Rational>> mainMatrix){
+    public Matrix(ArrayList<ArrayList<Fraction>> mainMatrix){
         this(mainMatrix.size(), mainMatrix.get(0).size());
 
         for (int i = 0; i < mainMatrix.size(); i++){
             for (int j = 0; j < mainMatrix.get(i).size(); j++){
-                this.mainMatrix.get(i).set(j, new Rational(mainMatrix.get(i).get(j)));
+                this.mainMatrix.get(i).set(j, new Fraction(mainMatrix.get(i).get(j)));
             }
         }
     }
 
-    public Matrix(ArrayList<ArrayList<Rational>> mainMatrix, ArrayList<ArrayList<Rational>> augmentedMatrix){
+    public Matrix(ArrayList<ArrayList<Fraction>> mainMatrix, ArrayList<ArrayList<Fraction>> augmentedMatrix){
         this(mainMatrix);
         for (int i = 0; i < augmentedMatrix.size(); i++){
             this.augmentedMatrix.add(new ArrayList<>());
             for (int j = 0; j < augmentedMatrix.get(i).size(); j++){
-                this.augmentedMatrix.get(i).add(new Rational(augmentedMatrix.get(i).get(j)));
+                this.augmentedMatrix.get(i).add(new Fraction(augmentedMatrix.get(i).get(j)));
             }
         }
     }
@@ -107,7 +107,7 @@ public class Matrix implements MatrixOperators {
             throw new IllegalArgumentException("invalid arguments in swipeRow\n");
         }
         for (int i = 0; i < getHeightMainMatrix(); i++){
-            Rational.swap(mainMatrix.get(i).get(j1), mainMatrix.get(i).get(j2));
+            Fraction.swap(mainMatrix.get(i).get(j1), mainMatrix.get(i).get(j2));
         }
 
         String tmp = columnNames.get(j1);
@@ -120,10 +120,10 @@ public class Matrix implements MatrixOperators {
             throw new IllegalArgumentException("invalid arguments in swipeRow\n");
         }
         for (int j = 0; j < getWidthMainMatrix(); j++) {
-            Rational.swap(mainMatrix.get(i1).get(j), mainMatrix.get(i2).get(j));
+            Fraction.swap(mainMatrix.get(i1).get(j), mainMatrix.get(i2).get(j));
         }
         for (int j = 0; j < getWidthAugmentedMatrix(); j++) {
-            Rational.swap(augmentedMatrix.get(i1).get(j), augmentedMatrix.get(i2).get(j));
+            Fraction.swap(augmentedMatrix.get(i1).get(j), augmentedMatrix.get(i2).get(j));
         }
         // обмен строк
         String tmp = rowNames.get(i1);
@@ -134,7 +134,7 @@ public class Matrix implements MatrixOperators {
 
     private int getVerticalCandidate(int startI, int j){
         for (int i = startI; i < getHeightMainMatrix(); i++){
-            if (getMainMatrixElement(i,j).isNotEqual(new Rational(0))){
+            if (getMainMatrixElement(i,j).isNotEqual(new Fraction(0))){
                 return i;
             }
         }
@@ -142,14 +142,14 @@ public class Matrix implements MatrixOperators {
     }
     private int getHorizonCandidate(int i, int startJ){
         for (int j = startJ; j < getWidthMainMatrix(); j++){
-            if (getMainMatrixElement(i,j).isNotEqual(new Rational(0,1))){
+            if (getMainMatrixElement(i,j).isNotEqual(new Fraction(0,1))){
                 return j;
             }
         }
         return -1;
     }
 
-    public void addRow(int target, int source, Rational coef){
+    public void addRow(int target, int source, Fraction coef){
         for (int j = 0; j < getWidthMainMatrix(); j++){
             mainMatrix.get(target).set(j, mainMatrix.get(target).get(j).add(mainMatrix.get(source).get(j).mlp(coef)));
         }
@@ -157,7 +157,7 @@ public class Matrix implements MatrixOperators {
             augmentedMatrix.get(target).set(j, augmentedMatrix.get(target).get(j).add(augmentedMatrix.get(source).get(j).mlp(coef)));
         }
     }
-    public void mlpRow(int target, Rational rightOperand){
+    public void mlpRow(int target, Fraction rightOperand){
 
         for (int j = 0; j < getWidthMainMatrix(); j++){
             mainMatrix.get(target).set(j, mainMatrix.get(target).get(j).mlp(rightOperand));
@@ -169,7 +169,7 @@ public class Matrix implements MatrixOperators {
     }
 
 
-    public Rational getDeterminantByTriangleMatrix() throws IllegalArgumentException{
+    public Fraction getDeterminantByTriangleMatrix() throws IllegalArgumentException{
         // one of the determinant property:
         // Interchanging any pair of columns or rows of a matrix multiplies its determinant by −1
         int countOfInterchanging = 0;
@@ -222,17 +222,17 @@ public class Matrix implements MatrixOperators {
             if (!isNullMatrix) {
                 // делаем нули внизу
                 for (int candidateRow = i + 1; candidateRow < matrix.getHeightMainMatrix(); candidateRow++) {
-                    matrix.addRow(candidateRow, i, new Rational(1).div(matrix.getMainMatrixElement(i,i)).mlp(matrix.getMainMatrixElement(candidateRow, i)).neg());
+                    matrix.addRow(candidateRow, i, new Fraction(1).div(matrix.getMainMatrixElement(i,i)).mlp(matrix.getMainMatrixElement(candidateRow, i)).neg());
                 }
             }
             // переходим к следующей ступени
             i++;
         }
 
-        Rational determinant = matrix.getDeterminantOfTriangleMatrix();
+        Fraction determinant = matrix.getDeterminantOfTriangleMatrix();
 
         if (countOfInterchanging % 2 == 1){
-            determinant = determinant.mlp(new Rational(-1));
+            determinant = determinant.mlp(new Fraction(-1));
         }
 
         return determinant;
@@ -274,7 +274,7 @@ public class Matrix implements MatrixOperators {
             if (!isNullMatrix) {
                 // делаем нули внизу
                 for (int candidateRow = i + 1; candidateRow < matrix.getHeightMainMatrix(); candidateRow++) {
-                    matrix.addRow(candidateRow, i, new Rational(1).div(matrix.getMainMatrixElement(i,i)).mlp(matrix.getMainMatrixElement(candidateRow, i)).neg());
+                    matrix.addRow(candidateRow, i, new Fraction(1).div(matrix.getMainMatrixElement(i,i)).mlp(matrix.getMainMatrixElement(candidateRow, i)).neg());
                 }
             }
             // переходим к следующей ступени
@@ -283,33 +283,33 @@ public class Matrix implements MatrixOperators {
         return matrix;
     }
 
-    public Rational getDeterminantOfTriangleMatrix(){
-        Rational det = new Rational(1);
+    public Fraction getDeterminantOfTriangleMatrix(){
+        Fraction det = new Fraction(1);
         for (int i = 0; i < getHeightMainMatrix(); i++){
-            det.setRational(det.mlp(getMainMatrixElement(i,i)));
+            det.setFraction(det.mlp(getMainMatrixElement(i,i)));
         }
         return det;
     }
 
-    public Rational getMainMatrixElement(int i, int j){
+    public Fraction getMainMatrixElement(int i, int j){
         if ((i < 0) || (j < 0) || (i >= getHeightMainMatrix()) || (j >= getWidthMainMatrix())) {
             throw new IllegalArgumentException("invalid arguments in getMainMatrixElement\n");
         }
-        return new Rational(mainMatrix.get(i).get(j));
+        return new Fraction(mainMatrix.get(i).get(j));
     }
 
-    public Rational getAugmentedElement(int i, int j){
+    public Fraction getAugmentedElement(int i, int j){
         if ((augmentedMatrix.size() == 0) || (i < 0) || (j < 0) || (i >= getHeightAugmentedMatrix()) || (j >= getWidthAugmentedMatrix())){
             throw new IllegalArgumentException("invalid arguments in getMainMatrixElement\n");
         }
-        return new Rational(augmentedMatrix.get(i).get(j));
+        return new Fraction(augmentedMatrix.get(i).get(j));
     }
 
-    public ArrayList<Rational> matrixFromJsonRow(int i){
+    public ArrayList<Fraction> matrixFromJsonRow(int i){
         if ((i < 0) || (i >= getHeightMainMatrix())) {
             throw new IllegalArgumentException("invalid arguments in matrixFromJsonRow\n");
         }
-        return new ArrayList<Rational>(mainMatrix.get(i));
+        return new ArrayList<Fraction>(mainMatrix.get(i));
     }
 
     public Solution getSolutionOfLES(){
@@ -319,7 +319,7 @@ public class Matrix implements MatrixOperators {
 
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             // решений нет
-             if ((!matrix.getAugmentedElement(i,0).equals(new Rational(0))) && (matrix.getHorizonCandidate(i,0) == -1)){
+             if ((!matrix.getAugmentedElement(i,0).equals(new Fraction(0))) && (matrix.getHorizonCandidate(i,0) == -1)){
                 return new Solution(false);
             }
         }
@@ -334,11 +334,11 @@ public class Matrix implements MatrixOperators {
             solution.independentVar.put(variableName, new ArrayList<>());
             int horizontalCandidate = matrix.getHorizonCandidate(i, 0);
 
-            solution.independentVar.get(variableName).add(new RationalVar("", matrix.getAugmentedElement(i,0)));
+            solution.independentVar.get(variableName).add(new FractionVar("", matrix.getAugmentedElement(i,0)));
             for (int j = horizontalCandidate+1; j < matrix.getWidthMainMatrix(); j++){
                 String name = matrix.columnNames.get(j);
-                Rational value = matrix.getMainMatrixElement(i,j);
-                solution.independentVar.get(variableName).add(new RationalVar(name,value.neg()));
+                Fraction value = matrix.getMainMatrixElement(i,j);
+                solution.independentVar.get(variableName).add(new FractionVar(name,value.neg()));
             }
         }
 
@@ -366,14 +366,14 @@ public class Matrix implements MatrixOperators {
         return vectorSet.getDecompositionByBasis(basisNamesList);
     }
 
-    public Rational getDeterminantByPermutations(){
+    public Fraction getDeterminantByPermutations(){
         if (getHeightMainMatrix() != getWidthMainMatrix()){
             throw new IllegalArgumentException("invalid matrix in getDeterminantByPermutation\n");
         }
         return null;
     }
 
-    public Rational getRank(){
+    public Fraction getRank(){
         Matrix matrix = new Matrix(this);
         int rank = 0;
 
@@ -384,7 +384,7 @@ public class Matrix implements MatrixOperators {
                 rank++;
             }
         }
-        return new Rational(rank);
+        return new Fraction(rank);
     }
 
     public static int countInversions(ArrayList<Integer> p){
@@ -411,12 +411,12 @@ public class Matrix implements MatrixOperators {
 
 
     @Override
-    public Matrix pow(Rational rational) throws IllegalArgumentException{
-        if (rational.getNumerator() < 0){
+    public Matrix pow(Fraction fraction) throws IllegalArgumentException{
+        if (fraction.getNumerator() < 0){
             throw new IllegalArgumentException("negative base in Matrix.pow");
         }
         Matrix result = new Matrix(this);
-        for (int i = 1; i < rational.getNumerator(); i++){
+        for (int i = 1; i < fraction.getNumerator(); i++){
             result = result.mlp(this);
         }
         return result;
@@ -427,12 +427,12 @@ public class Matrix implements MatrixOperators {
         Matrix matrix = new Matrix(getWidthMainMatrix(), getHeightMainMatrix(), getHeightAugmentedMatrix(), getWidthAugmentedMatrix());
         for (int i = 0; i < getHeightMainMatrix(); i++){
             for (int j = 0; j < getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(j).set(i, new Rational(getMainMatrixElement(i,j)));
+                matrix.mainMatrix.get(j).set(i, new Fraction(getMainMatrixElement(i,j)));
             }
         }
         for (int i = 0; i < getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, new Rational(getAugmentedElement(i,j)));
+                matrix.augmentedMatrix.get(i).set(j, new Fraction(getAugmentedElement(i,j)));
             }
         }
         return matrix;
@@ -441,14 +441,14 @@ public class Matrix implements MatrixOperators {
     @Override
     public Matrix getInverseMatrix() throws IllegalArgumentException{
         /// бросить исключение, в случае нуля!!!
-        if (getDeterminantByTriangleMatrix().equals(new Rational(0))){
+        if (getDeterminantByTriangleMatrix().equals(new Fraction(0))){
             throw new IllegalArgumentException("zero-matrix in getInverseMatrix");
         }
 
         Matrix A = new Matrix(getHeightMainMatrix(), getWidthMainMatrix(), getHeightMainMatrix(), getWidthMainMatrix());
 
         for (int i = 0; i < A.getHeightMainMatrix(); i++){
-            A.augmentedMatrix.get(i).set(i, new Rational(1));
+            A.augmentedMatrix.get(i).set(i, new Fraction(1));
             for (int j = 0; j < A.getWidthMainMatrix(); j++){
                 A.mainMatrix.get(i).set(j, getMainMatrixElement(i,j));
             }
@@ -471,7 +471,7 @@ public class Matrix implements MatrixOperators {
         }
 
         for (int i = 0; i < A.getHeightMainMatrix(); i++){
-            A.mlpRow(i, new Rational(1).div(A.getMainMatrixElement(i,i)));
+            A.mlpRow(i, new Fraction(1).div(A.getMainMatrixElement(i,i)));
         }
 
 
@@ -510,16 +510,16 @@ public class Matrix implements MatrixOperators {
     }
 
     @Override
-    public Matrix add(Rational rational) {
+    public Matrix add(Fraction fraction) {
         Matrix matrix = new Matrix(this);
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             for (int j = 0; j < matrix.getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).add(rational));
+                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).add(fraction));
             }
         }
         for (int i = 0; i < matrix.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < matrix.getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).add(rational));
+                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).add(fraction));
             }
         }
         return matrix;
@@ -527,41 +527,41 @@ public class Matrix implements MatrixOperators {
 
     @Override
     public Matrix neg(){
-        return mlp(new Rational(-1));
+        return mlp(new Fraction(-1));
     }
 
     @Override
-    public Matrix sub(Rational rational) {
-        return this.add(rational.neg());
+    public Matrix sub(Fraction fraction) {
+        return this.add(fraction.neg());
     }
 
     @Override
-    public Matrix mlp(Rational rational) {
+    public Matrix mlp(Fraction fraction) {
         Matrix matrix = new Matrix(this);
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             for (int j = 0; j < matrix.getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).mlp(rational));
+                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).mlp(fraction));
             }
         }
         for (int i = 0; i < matrix.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < matrix.getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).mlp(rational));
+                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).mlp(fraction));
             }
         }
         return matrix;
     }
 
     @Override
-    public Matrix div(Rational rational) {
+    public Matrix div(Fraction fraction) {
         Matrix matrix = new Matrix(this);
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             for (int j = 0; j < matrix.getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).div(rational));
+                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).div(fraction));
             }
         }
         for (int i = 0; i < matrix.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < matrix.getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).div(rational));
+                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).div(fraction));
             }
         }
         return matrix;
@@ -660,7 +660,7 @@ public class Matrix implements MatrixOperators {
 
             if (!isNullMatrix) {
                 // делаем единицу
-                matrix.mlpRow(i, new Rational(1).div(matrix.getMainMatrixElement(i, i)));
+                matrix.mlpRow(i, new Fraction(1).div(matrix.getMainMatrixElement(i, i)));
                 // делаем нули внизу
                 for (int candidateRow = i + 1; candidateRow < matrix.getHeightMainMatrix(); candidateRow++) {
                     matrix.addRow(candidateRow, i, matrix.getMainMatrixElement(candidateRow, i).neg());

@@ -2,7 +2,7 @@ package calculator;
 
 
 import calculator.services.MatrixToken;
-import calculator.services.RationalToken;
+import calculator.services.FractionToken;
 import matrix.Matrix;
 
 import java.util.Objects;
@@ -12,7 +12,7 @@ public class Token{
 
     public enum Type{
         Matrix,
-        Rational
+        Fraction
     }
 
 
@@ -68,8 +68,8 @@ public class Token{
         switch (type){
             case Matrix:
                 return ((MatrixToken) this).getMatrix().equals(((MatrixToken) token).getMatrix());
-            case Rational:
-                return ((RationalToken) this).getRational().equals(((RationalToken) token).getRational());
+            case Fraction:
+                return ((FractionToken) this).getFraction().equals(((FractionToken) token).getFraction());
             default:
                 return false;
         }
@@ -87,12 +87,12 @@ public class Token{
 //        if ((Type.Matrix.compareTo(type) == 0) && (Type.Matrix.compareTo(token.type) == 0)) {
 //            return ((Matrix) this).add((Matrix) token);
 //        }
-//        if ((Type.Rational.compareTo(type) == 0) && (Type.Rational.compareTo(token.type) == 0)) {
-//            return ((Rational) this).add((Rational) token);
+//        if ((Type.Fraction.compareTo(type) == 0) && (Type.Fraction.compareTo(token.type) == 0)) {
+//            return ((Fraction) this).add((Fraction) token);
 //        }
 //
-//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
-//            return ((Matrix) this).add((Rational) token);
+//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Fraction).compareTo(token.type) == 0)){
+//            return ((Matrix) this).add((Fraction) token);
 //        }
 //
 //        throw new IllegalArgumentException("invalid operands in add");
@@ -102,8 +102,8 @@ public class Token{
 //        if ((Type.Matrix.compareTo(this.type) == 0) && (Type.Matrix.compareTo(token.type) == 0)) {
 //            return ((Matrix) this).sub((Matrix) token);
 //        }
-//        if ((type.compareTo(Type.Rational) == 0) && (token.type.compareTo(Type.Rational) == 0)) {
-//            return ((Rational) this).sub((Rational) token);
+//        if ((type.compareTo(Type.Fraction) == 0) && (token.type.compareTo(Type.Fraction) == 0)) {
+//            return ((Fraction) this).sub((Fraction) token);
 //        }
 //        throw new IllegalArgumentException("invalid operands in sub");
 //    }
@@ -112,11 +112,11 @@ public class Token{
 //        if ((Type.Matrix.compareTo(type) == 0) && (Type.Matrix.compareTo(token.type) == 0)) {
 //            return ((Matrix) this).mlp((Matrix) token);
 //        }
-//        if ((Type.Rational.compareTo(type) == 0) && (Type.Rational.compareTo(token.type) == 0)) {
-//            return ((Rational) this).mlp((Rational) token);
+//        if ((Type.Fraction.compareTo(type) == 0) && (Type.Fraction.compareTo(token.type) == 0)) {
+//            return ((Fraction) this).mlp((Fraction) token);
 //        }
-//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
-//            return ((Matrix) this).mlp((Rational) token);
+//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Fraction).compareTo(token.type) == 0)){
+//            return ((Matrix) this).mlp((Fraction) token);
 //        }
 //
 //        throw new IllegalArgumentException("invalid operands in mlp");
@@ -126,25 +126,25 @@ public class Token{
 //        if ((Type.Matrix.compareTo(type) == 0) && (Type.Matrix.compareTo(token.type) == 0)) {
 //            return ((Matrix) this).div((Matrix) token);
 //        }
-//        if ((Type.Rational.compareTo(type) == 0) && (Type.Rational.compareTo(token.type) == 0)) {
-//            return ((Rational) this).div((Rational) token);
+//        if ((Type.Fraction.compareTo(type) == 0) && (Type.Fraction.compareTo(token.type) == 0)) {
+//            return ((Fraction) this).div((Fraction) token);
 //        }
 //
-//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Rational).compareTo(token.type) == 0)){
-//            return ((Matrix) this).div((Rational) token);
+//        if ((Type.Matrix.compareTo(type) == 0) && ((Type.Fraction).compareTo(token.type) == 0)){
+//            return ((Matrix) this).div((Fraction) token);
 //        }
 //        throw new IllegalArgumentException("invalid operands in div");
 //    }
 //
 //    public Token pow(Token token) throws IllegalArgumentException{
-//        if ((Type.Matrix.compareTo(token.type) == 0) && (Type.Rational.compareTo(token.type) == 0)){
-//            if (((Rational) token).getDenominator() != 1){
+//        if ((Type.Matrix.compareTo(token.type) == 0) && (Type.Fraction.compareTo(token.type) == 0)){
+//            if (((Fraction) token).getDenominator() != 1){
 //                throw new IllegalArgumentException("invalid power in pow");
 //            }
-//            return ((Matrix) this).pow((Rational) token);
+//            return ((Matrix) this).pow((Fraction) token);
 //        }
-//        if ((Type.Rational.compareTo(type) == 0) && (Type.Rational.compareTo(token.type) == 0)){
-//            return ((Rational) this).pow((Rational)token);
+//        if ((Type.Fraction.compareTo(type) == 0) && (Type.Fraction.compareTo(token.type) == 0)){
+//            return ((Fraction) this).pow((Fraction)token);
 //        }
 //        throw new IllegalArgumentException("invalid argument in pow");
 //

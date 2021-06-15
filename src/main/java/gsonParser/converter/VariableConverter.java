@@ -3,12 +3,12 @@ package gsonParser.converter;
 
 import calculator.Token;
 import calculator.services.MatrixToken;
-import calculator.services.RationalToken;
+import calculator.services.FractionToken;
 import calculator.services.Variable;
 import com.google.gson.*;
 import gsonParser.GsonParser;
 import matrix.Matrix;
-import rational.Rational;
+import fraction.Fraction;
 
 import java.lang.reflect.Type;
 
@@ -36,8 +36,8 @@ public class VariableConverter implements JsonDeserializer<Variable>, JsonSerial
         switch (type){
             case Matrix:
                 return new MatrixToken(GsonParser.matrixFromJson(value));
-            case Rational:
-                return new RationalToken(GsonParser.rationalFromJson(value));
+            case Fraction:
+                return new FractionToken(GsonParser.fractionFromJson(value));
             default:
                 throw new JsonParseException("no such type");
         }
@@ -55,9 +55,9 @@ public class VariableConverter implements JsonDeserializer<Variable>, JsonSerial
             case Matrix:
                 MatrixToken matrixToken = (MatrixToken) variable.getValue();
                 return GsonParser.toJson(matrixToken.getMatrix());
-            case Rational:
-                RationalToken rationalToken = (RationalToken) variable.getValue();
-                return GsonParser.toJson(rationalToken.getRational());
+            case Fraction:
+                FractionToken fractionToken = (FractionToken) variable.getValue();
+                return GsonParser.toJson(fractionToken.getFraction());
             default:
                 throw new JsonParseException("no such type");
         }
