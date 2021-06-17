@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.0.0
 info:
   title: MatrixCalc API
   description: Calculate expression with matrix
@@ -19,13 +19,11 @@ paths:
               properties:
                 expression:
                   type: string
-                  required: true
                   example: '3*X'
                 variables:
                   type: array
                   items:
                     $ref: '#/components/schemas/variable'
-                  required: true
 
       responses:
         200:
@@ -35,7 +33,7 @@ paths:
               schema:
                 properties:
                   status:
-                    required: true
+#                    required: true
                     enum:
                       - ok
                       - error
@@ -44,40 +42,35 @@ paths:
                   error:
                     type: string
 
+
+
 components:
   schemas:
     variable:
       properties:
         name:
           type: string
-          required: true
         type:
           type: string
           enum:
             - matrix
             - fraction
-          required: true
         value:
-          required: true
           anyOf:
             - $ref: '#/components/schemas/matrix'
             - $ref: '#/components/schemas/fraction'
-
     fraction:
       properties:
         numerator:
           type: integer
-          required: true
         denominator:
           type: integer
-          required: true
       example:
         numerator: 5
         denominator: -2
     matrix:
       properties:
         main:
-          required: true
           type: array
           items:
             type: array
