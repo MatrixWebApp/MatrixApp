@@ -15,6 +15,9 @@ public class Variable {
         this.value = value;
     }
 
+    public Variable(){ }
+
+
     public String getName() {
         return name;
     }

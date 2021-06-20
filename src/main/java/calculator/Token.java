@@ -16,6 +16,7 @@ public class Token{
     }
 
 
+
     public Token add(Token token) throws IllegalArgumentException{
         return add(token);
     }

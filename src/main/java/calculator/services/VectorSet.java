@@ -65,6 +65,6 @@ public class VectorSet {
     }
 
     public ArrayList<ArrayList<Fraction>> getTransposeList(ArrayList<ArrayList<Fraction>> list){
-        return (new Matrix(list).getTransposeMatrix().mainMatrix);
+        return (new Matrix(list).getTransposeMatrix().main);
     }
 }

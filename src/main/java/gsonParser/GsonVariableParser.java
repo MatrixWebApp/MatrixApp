@@ -14,10 +14,10 @@ public class GsonVariableParser {
         gsonParser = builder.create();
     }
 
-    static public Variable getVariable(String json){
+    static public Variable toVariable(String json){
         return gsonParser.fromJson(json, Variable.class);
     }
-    static public String getJsonVariable(Variable variable){
+    static public String toJson(Variable variable){
         return gsonParser.toJson(variable);
     }
 

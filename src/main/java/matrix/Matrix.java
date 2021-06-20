@@ -1,6 +1,5 @@
 package matrix;
 
-import calculator.Token;
 import calculator.services.FractionVar;
 import calculator.services.Solution;
 import calculator.services.VectorSet;
@@ -10,11 +9,11 @@ import java.util.*;
 
 public class Matrix implements MatrixOperators {
 
-    public ArrayList<ArrayList<Fraction>> mainMatrix = new ArrayList<>();
-    private ArrayList<ArrayList<Fraction>> augmentedMatrix = new ArrayList<>();
+    public ArrayList<ArrayList<Fraction>> main = new ArrayList<>();
+    public ArrayList<ArrayList<Fraction>> augmented = new ArrayList<>();
 
-    private ArrayList<String> columnNames = new ArrayList<>();
-    private ArrayList<String> rowNames = new ArrayList<>();
+    private  ArrayList<String> columnNames = new ArrayList<>();
+    private  ArrayList<String> rowNames = new ArrayList<>();
 
 
 
@@ -30,9 +29,9 @@ public class Matrix implements MatrixOperators {
         }
 
         for (int i = 0; i < height; i++){
-            mainMatrix.add(new ArrayList<>());
+            main.add(new ArrayList<>());
             for (int j = 0; j < width; j++){
-                mainMatrix.get(i).add(new Fraction(0));
+                main.get(i).add(new Fraction(0));
             }
         }
     }
@@ -46,36 +45,36 @@ public class Matrix implements MatrixOperators {
 
 
         for (int i = 0; i < augmentedHeight; i++){
-            augmentedMatrix.add(new ArrayList<>());
+            augmented.add(new ArrayList<>());
             for (int j = 0; j < augmentedWidth; j++){
-                augmentedMatrix.get(i).add(new Fraction(0));
+                augmented.get(i).add(new Fraction(0));
             }
         }
     }
 
 
-    public Matrix(ArrayList<ArrayList<Fraction>> mainMatrix){
-        this(mainMatrix.size(), mainMatrix.get(0).size());
+    public Matrix(ArrayList<ArrayList<Fraction>> main){
+        this(main.size(), main.get(0).size());
 
-        for (int i = 0; i < mainMatrix.size(); i++){
-            for (int j = 0; j < mainMatrix.get(i).size(); j++){
-                this.mainMatrix.get(i).set(j, new Fraction(mainMatrix.get(i).get(j)));
+        for (int i = 0; i < main.size(); i++){
+            for (int j = 0; j < main.get(i).size(); j++){
+                this.main.get(i).set(j, new Fraction(main.get(i).get(j)));
             }
         }
     }
 
-    public Matrix(ArrayList<ArrayList<Fraction>> mainMatrix, ArrayList<ArrayList<Fraction>> augmentedMatrix){
-        this(mainMatrix);
-        for (int i = 0; i < augmentedMatrix.size(); i++){
-            this.augmentedMatrix.add(new ArrayList<>());
-            for (int j = 0; j < augmentedMatrix.get(i).size(); j++){
-                this.augmentedMatrix.get(i).add(new Fraction(augmentedMatrix.get(i).get(j)));
+    public Matrix(ArrayList<ArrayList<Fraction>> main, ArrayList<ArrayList<Fraction>> augmented){
+        this(main);
+        for (int i = 0; i < augmented.size(); i++){
+            this.augmented.add(new ArrayList<>());
+            for (int j = 0; j < augmented.get(i).size(); j++){
+                this.augmented.get(i).add(new Fraction(augmented.get(i).get(j)));
             }
         }
     }
 
     public Matrix(Matrix matrix){
-        this(matrix.mainMatrix, matrix.augmentedMatrix);
+        this(matrix.main, matrix.augmented);
         rowNames = new ArrayList<>(matrix.rowNames);
         columnNames = new ArrayList<>(matrix.columnNames);
     }
@@ -89,16 +88,16 @@ public class Matrix implements MatrixOperators {
     }
 
     public int getWidthMainMatrix(){
-        return mainMatrix.get(0).size();
+        return main.get(0).size();
     }
     public int getHeightMainMatrix(){
-        return mainMatrix.size();
+        return main.size();
     }
     public int getWidthAugmentedMatrix(){
-        return augmentedMatrix.size() == 0 ? 0:augmentedMatrix.get(0).size();
+        return augmented.size() == 0 ? 0: augmented.get(0).size();
     }
     public int getHeightAugmentedMatrix(){
-        return augmentedMatrix.size();
+        return augmented.size();
     }
 
 
@@ -107,7 +106,7 @@ public class Matrix implements MatrixOperators {
             throw new IllegalArgumentException("invalid arguments in swipeRow\n");
         }
         for (int i = 0; i < getHeightMainMatrix(); i++){
-            Fraction.swap(mainMatrix.get(i).get(j1), mainMatrix.get(i).get(j2));
+            Fraction.swap(main.get(i).get(j1), main.get(i).get(j2));
         }
 
         String tmp = columnNames.get(j1);
@@ -120,10 +119,10 @@ public class Matrix implements MatrixOperators {
             throw new IllegalArgumentException("invalid arguments in swipeRow\n");
         }
         for (int j = 0; j < getWidthMainMatrix(); j++) {
-            Fraction.swap(mainMatrix.get(i1).get(j), mainMatrix.get(i2).get(j));
+            Fraction.swap(main.get(i1).get(j), main.get(i2).get(j));
         }
         for (int j = 0; j < getWidthAugmentedMatrix(); j++) {
-            Fraction.swap(augmentedMatrix.get(i1).get(j), augmentedMatrix.get(i2).get(j));
+            Fraction.swap(augmented.get(i1).get(j), augmented.get(i2).get(j));
         }
         // обмен строк
         String tmp = rowNames.get(i1);
@@ -151,19 +150,19 @@ public class Matrix implements MatrixOperators {
 
     public void addRow(int target, int source, Fraction coef){
         for (int j = 0; j < getWidthMainMatrix(); j++){
-            mainMatrix.get(target).set(j, mainMatrix.get(target).get(j).add(mainMatrix.get(source).get(j).mlp(coef)));
+            main.get(target).set(j, main.get(target).get(j).add(main.get(source).get(j).mlp(coef)));
         }
         for (int j = 0; j < getWidthAugmentedMatrix(); j++){
-            augmentedMatrix.get(target).set(j, augmentedMatrix.get(target).get(j).add(augmentedMatrix.get(source).get(j).mlp(coef)));
+            augmented.get(target).set(j, augmented.get(target).get(j).add(augmented.get(source).get(j).mlp(coef)));
         }
     }
     public void mlpRow(int target, Fraction rightOperand){
 
         for (int j = 0; j < getWidthMainMatrix(); j++){
-            mainMatrix.get(target).set(j, mainMatrix.get(target).get(j).mlp(rightOperand));
+            main.get(target).set(j, main.get(target).get(j).mlp(rightOperand));
         }
         for (int j = 0; j < getWidthAugmentedMatrix(); j++){
-            augmentedMatrix.get(target).set(j, augmentedMatrix.get(target).get(j).mlp(rightOperand));
+            augmented.get(target).set(j, augmented.get(target).get(j).mlp(rightOperand));
         }
 
     }
@@ -295,21 +294,21 @@ public class Matrix implements MatrixOperators {
         if ((i < 0) || (j < 0) || (i >= getHeightMainMatrix()) || (j >= getWidthMainMatrix())) {
             throw new IllegalArgumentException("invalid arguments in getMainMatrixElement\n");
         }
-        return new Fraction(mainMatrix.get(i).get(j));
+        return new Fraction(main.get(i).get(j));
     }
 
     public Fraction getAugmentedElement(int i, int j){
-        if ((augmentedMatrix.size() == 0) || (i < 0) || (j < 0) || (i >= getHeightAugmentedMatrix()) || (j >= getWidthAugmentedMatrix())){
+        if ((augmented.size() == 0) || (i < 0) || (j < 0) || (i >= getHeightAugmentedMatrix()) || (j >= getWidthAugmentedMatrix())){
             throw new IllegalArgumentException("invalid arguments in getMainMatrixElement\n");
         }
-        return new Fraction(augmentedMatrix.get(i).get(j));
+        return new Fraction(augmented.get(i).get(j));
     }
 
     public ArrayList<Fraction> matrixFromJsonRow(int i){
         if ((i < 0) || (i >= getHeightMainMatrix())) {
             throw new IllegalArgumentException("invalid arguments in matrixFromJsonRow\n");
         }
-        return new ArrayList<Fraction>(mainMatrix.get(i));
+        return new ArrayList<Fraction>(main.get(i));
     }
 
     public Solution getSolutionOfLES(){
@@ -355,7 +354,7 @@ public class Matrix implements MatrixOperators {
 
         VectorSet vectorSet = new VectorSet();
         for (int i = 0; i < getHeightMainMatrix(); i++){
-            vectorSet.addVector(rowNames.get(i), mainMatrix.get(i));
+            vectorSet.addVector(rowNames.get(i), main.get(i));
         }
 
         ArrayList<String> basisNamesList = new ArrayList<>();
@@ -427,12 +426,12 @@ public class Matrix implements MatrixOperators {
         Matrix matrix = new Matrix(getWidthMainMatrix(), getHeightMainMatrix(), getHeightAugmentedMatrix(), getWidthAugmentedMatrix());
         for (int i = 0; i < getHeightMainMatrix(); i++){
             for (int j = 0; j < getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(j).set(i, new Fraction(getMainMatrixElement(i,j)));
+                matrix.main.get(j).set(i, new Fraction(getMainMatrixElement(i,j)));
             }
         }
         for (int i = 0; i < getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, new Fraction(getAugmentedElement(i,j)));
+                matrix.augmented.get(i).set(j, new Fraction(getAugmentedElement(i,j)));
             }
         }
         return matrix;
@@ -448,9 +447,9 @@ public class Matrix implements MatrixOperators {
         Matrix A = new Matrix(getHeightMainMatrix(), getWidthMainMatrix(), getHeightMainMatrix(), getWidthMainMatrix());
 
         for (int i = 0; i < A.getHeightMainMatrix(); i++){
-            A.augmentedMatrix.get(i).set(i, new Fraction(1));
+            A.augmented.get(i).set(i, new Fraction(1));
             for (int j = 0; j < A.getWidthMainMatrix(); j++){
-                A.mainMatrix.get(i).set(j, getMainMatrixElement(i,j));
+                A.main.get(i).set(j, getMainMatrixElement(i,j));
             }
         }
 
@@ -475,7 +474,7 @@ public class Matrix implements MatrixOperators {
         }
 
 
-        return new Matrix(A.augmentedMatrix);
+        return new Matrix(A.augmented);
 
     }
 
@@ -493,14 +492,14 @@ public class Matrix implements MatrixOperators {
 
         for (int i = 0; i < result.getHeightMainMatrix(); i++){
             for (int j = 0; j < result.getWidthMainMatrix(); j++){
-                result.mainMatrix.get(i).set(j, result.getMainMatrixElement(i,j)
+                result.main.get(i).set(j, result.getMainMatrixElement(i,j)
                                                 .add(matrix.getMainMatrixElement(i,j)));
             }
         }
 
         for (int i = 0; i < result.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < result.getWidthAugmentedMatrix(); j++){
-                result.augmentedMatrix.get(i).set(j, result.getAugmentedElement(i,j)
+                result.augmented.get(i).set(j, result.getAugmentedElement(i,j)
                                                      .add(getAugmentedElement(i,j)));
             }
         }
@@ -514,12 +513,12 @@ public class Matrix implements MatrixOperators {
         Matrix matrix = new Matrix(this);
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             for (int j = 0; j < matrix.getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).add(fraction));
+                matrix.main.get(i).set(j, getMainMatrixElement(i,j).add(fraction));
             }
         }
         for (int i = 0; i < matrix.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < matrix.getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).add(fraction));
+                matrix.augmented.get(i).set(j, getAugmentedElement(i,j).add(fraction));
             }
         }
         return matrix;
@@ -540,12 +539,12 @@ public class Matrix implements MatrixOperators {
         Matrix matrix = new Matrix(this);
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             for (int j = 0; j < matrix.getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).mlp(fraction));
+                matrix.main.get(i).set(j, getMainMatrixElement(i,j).mlp(fraction));
             }
         }
         for (int i = 0; i < matrix.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < matrix.getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).mlp(fraction));
+                matrix.augmented.get(i).set(j, getAugmentedElement(i,j).mlp(fraction));
             }
         }
         return matrix;
@@ -556,12 +555,12 @@ public class Matrix implements MatrixOperators {
         Matrix matrix = new Matrix(this);
         for (int i = 0; i < matrix.getHeightMainMatrix(); i++){
             for (int j = 0; j < matrix.getWidthMainMatrix(); j++){
-                matrix.mainMatrix.get(i).set(j, getMainMatrixElement(i,j).div(fraction));
+                matrix.main.get(i).set(j, getMainMatrixElement(i,j).div(fraction));
             }
         }
         for (int i = 0; i < matrix.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < matrix.getWidthAugmentedMatrix(); j++){
-                matrix.augmentedMatrix.get(i).set(j, getAugmentedElement(i,j).div(fraction));
+                matrix.augmented.get(i).set(j, getAugmentedElement(i,j).div(fraction));
             }
         }
         return matrix;
@@ -578,14 +577,14 @@ public class Matrix implements MatrixOperators {
 
         for (int i = 0; i < result.getHeightMainMatrix(); i++){
             for (int j = 0; j < result.getWidthMainMatrix(); j++){
-                result.mainMatrix.get(i).set(j, result.getMainMatrixElement(i,j)
+                result.main.get(i).set(j, result.getMainMatrixElement(i,j)
                         .sub(matrix.getMainMatrixElement(i,j)));
             }
         }
 
         for (int i = 0; i < result.getHeightAugmentedMatrix(); i++){
             for (int j = 0; j < result.getWidthAugmentedMatrix(); j++){
-                result.augmentedMatrix.get(i).set(j, result.getAugmentedElement(i,j)
+                result.augmented.get(i).set(j, result.getAugmentedElement(i,j)
                         .sub(getAugmentedElement(i,j)));
             }
         }
@@ -609,7 +608,7 @@ public class Matrix implements MatrixOperators {
         for (int i = 0; i < result.getHeightMainMatrix(); i++){
             for (int j = 0; j < result.getWidthMainMatrix(); j++){
                 for (int s = 0; s < getHeightMainMatrix(); s++){
-                    result.mainMatrix.get(i).set(j, result.getMainMatrixElement(i,j)
+                    result.main.get(i).set(j, result.getMainMatrixElement(i,j)
                                                     .add(getMainMatrixElement(i,s).mlp(matrix.getMainMatrixElement(s,j))));
                 }
             }
@@ -711,7 +710,7 @@ public class Matrix implements MatrixOperators {
 
     @Override
     public int hashCode() {
-        return Objects.hash(mainMatrix, augmentedMatrix);
+        return Objects.hash(main, augmented);
     }
 
 }
