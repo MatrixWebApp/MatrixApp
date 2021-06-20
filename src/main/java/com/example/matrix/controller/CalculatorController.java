@@ -2,16 +2,15 @@ package com.example.matrix.controller;
 
 
 import calculator.Token;
+import calculator.services.FractionToken;
 import calculator.services.MatrixToken;
 import calculator.services.Variable;
-import com.example.matrix.json.CalculateResponse;
-import com.example.matrix.json.MatrixResponse;
-import com.example.matrix.json.ResultToken;
-import com.example.matrix.json.TokenResponse;
+import com.example.matrix.json.*;
 import com.example.matrix.service.CalculatorService;
 
 import com.github.jknack.handlebars.internal.antlr.misc.Pair;
 import com.google.gson.*;
+import fraction.Fraction;
 import gsonParser.GsonParser;
 import gsonParser.GsonVariableParser;
 import io.swagger.util.Json;
@@ -56,10 +55,13 @@ public class CalculatorController {
 
         CalculateResponse response = new CalculateResponse();
 
-        response.setStatus(CalculateResponse.Status.valueOf(resultPair.b.toLowerCase(Locale.ROOT)));
-        response.setResult(toTokenResponse(resultPair.a));
+        response.setStatus(resultPair.b);
+        // TODO change on enum
+        // TODO change PAIR - not beauty(a and b)
+        if ("OK".equals(resultPair.b))
+            response.setResult(toTokenResponse(resultPair.a));
 
-        return new ResponseEntity<>(response, HttpStatus.ACCEPTED);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     public ArrayList<Variable>  parseVariables(Map<String, Object> model) {
@@ -78,15 +80,25 @@ public class CalculatorController {
     }
 
     private TokenResponse toTokenResponse(Token token){
-        if (token.type.equals(Token.Type.Matrix)){
+        if (Token.Type.Matrix == token.type){
             MatrixResponse matrixResponse = new MatrixResponse();
             matrixResponse.main = ((MatrixToken) token).getMatrix().main;
             matrixResponse.augmented = ((MatrixToken) token).getMatrix().augmented;
             matrixResponse.type = token.type.toString().toLowerCase(Locale.ROOT);
             return matrixResponse;
         }
-        else return null;
-        // TODO is not implemented fraction case
+        else if (Token.Type.Fraction == token.type){
+            FractionResponse fractionResponse = new FractionResponse();
+            fractionResponse.numerator = ((FractionToken) token).getFraction().getNumerator();
+            fractionResponse.denominator = ((FractionToken) token).getFraction().getDenominator();
+            fractionResponse.type = token.type.toString().toLowerCase(Locale.ROOT);
+            return fractionResponse;
+        }
+        else {
+            assert false;
+            return null;
+        }
+
     }
 
 

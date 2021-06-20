@@ -1,6 +1,7 @@
 package com.example.matrix.json;
 
 import calculator.Token;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,9 +13,10 @@ public class CalculateResponse implements Serializable{
         ok,
         error
     }
+    // TODO change corresponding with API
     @Getter
     @Setter
-    Status status;
+    String status;
     @Getter
     @Setter
     TokenResponse result;

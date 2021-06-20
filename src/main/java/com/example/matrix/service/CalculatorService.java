@@ -10,6 +10,7 @@ import gsonParser.GsonVariableParser;
 import matrix.Matrix;
 import org.springframework.stereotype.Service;
 
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 
 @Service
@@ -17,7 +18,7 @@ public class CalculatorService {
     public Pair<Token, String> calculate(String expression, ArrayList<Variable> variables) {
         Calculator calculator = new Calculator(variables);
         Token token = calculator.evaluate(expression);
-
+        // change corresponding with openAPI
         return new Pair<>(token, calculator.status);
     }
 }
