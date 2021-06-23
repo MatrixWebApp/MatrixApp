@@ -1,7 +1,0 @@
-{
-  "main":[
-    [{"numerator":1},{"numerator":2}, {"numerator":1}],
-    [{"numerator":1},{"numerator":1}, {"numerator":1}],
-    [{"numerator":1},{"numerator":1}, {"numerator":3}]
-  ]
-}

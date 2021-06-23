@@ -1,8 +1,0 @@
-{
-  "main":[
-    [{"numerator": 1,"denominator": 1},{"numerator": 2,"denominator": 1},{"numerator": 3,"denominator": 1}],
-    [{"numerator": 4,"denominator": 3},{"numerator": 5,"denominator": 3},{"numerator": 6,"denominator": 3}],
-    [{"numerator": 7,"denominator": 1},{"numerator": 8,"denominator": 1},{"numerator": 9,"denominator": 1}]
-
-  ]
-}
