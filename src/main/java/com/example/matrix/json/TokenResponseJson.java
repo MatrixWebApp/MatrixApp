@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
-public class TokenResponse implements Serializable {
+public class TokenResponseJson implements Serializable {
     @Getter
     @Setter
     public String type;

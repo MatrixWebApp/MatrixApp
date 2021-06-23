@@ -1,3 +1,4 @@
+# TODO add require field
 openapi: 3.0.0
 info:
   title: MatrixCalc API
@@ -24,7 +25,6 @@ paths:
                   type: array
                   items:
                     $ref: '#/components/schemas/variable'
-
       responses:
         200:
           description: Successful response
@@ -33,17 +33,14 @@ paths:
               schema:
                 properties:
                   status:
-#                    required: true
+
                     enum:
                       - ok
                       - error
                   result:
                     $ref: '#/components/schemas/variable'
-                  error:
+                  details:
                     type: string
-
-
-
 components:
   schemas:
     variable:
