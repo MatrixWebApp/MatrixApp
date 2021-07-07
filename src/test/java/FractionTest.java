@@ -14,7 +14,6 @@ class FractionTest {
 
     @BeforeEach
     public void setup(){
-        // ./src/main/resources/matrixTest
         random = new Random();
     }
 

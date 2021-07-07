@@ -26,7 +26,7 @@ CalculatorTest {
 
     @BeforeEach
     public void setup() {
-        path = Paths.get(".", "src", "main", "resources", "test", "calculator.json");
+        path = Paths.get(".", "src", "main", "resources", "static", "test", "calculator.json");
         testJson = getJson(path);
 
     }
