@@ -1,6 +1,6 @@
-/* div {
+div {
     border: 1px solid black;
-} */
+}
 
 header {
     border: 1px solid black;
@@ -105,11 +105,16 @@ footer {
     justify-content: center;
     align-items: center;
     top: 30%;
+    border: 2px dashed rgb(0, 0, 0);
 }
 
 .input {
     position: absolute;
     left: 42%;
-    width: 400px;
+    z-index: 10;
     top: 20%;
+}
+
+input {
+    width: 550px;
 }
