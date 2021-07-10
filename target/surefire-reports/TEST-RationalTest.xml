@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="RationalTest" time="0.008" tests="15" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1251"/>
+    <property name="java.class.path" value="D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary\target\test-classes;D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary\target\classes;C:\Users\pilac\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\pilac\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\pilac\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\pilac\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pilac\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\pilac\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\pilac\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;"/>
+    <property name="java.vm.vendor" value="Amazon.com Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://aws.amazon.com/corretto/"/>
+    <property name="user.timezone" value="Europe/Moscow"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="C:\Users\pilac\.jdks\corretto-11.0.11\bin"/>
+    <property name="sun.java.command" value="C:\Users\pilac\AppData\Local\Temp\surefire10521819220210062374\surefirebooter9420990687070408424.jar C:\Users\pilac\AppData\Local\Temp\surefire10521819220210062374 2021-06-13T14-08-01_376-jvmRun1 surefire18013323429383420090tmp surefire_0675047329395931664tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary\target\test-classes;D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary\target\classes;C:\Users\pilac\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.5.2\junit-jupiter-engine-5.5.2.jar;C:\Users\pilac\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\pilac\.m2\repository\org\junit\platform\junit-platform-engine\1.5.2\junit-platform-engine-1.5.2.jar;C:\Users\pilac\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\pilac\.m2\repository\org\junit\platform\junit-platform-commons\1.5.2\junit-platform-commons-1.5.2.jar;C:\Users\pilac\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.5.2\junit-jupiter-api-5.5.2.jar;C:\Users\pilac\.m2\repository\com\google\code\gson\gson\2.8.6\gson-2.8.6.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\pilac"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2021-04-20"/>
+    <property name="java.home" value="C:\Users\pilac\.jdks\corretto-11.0.11"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\pilac\AppData\Local\Temp\surefire10521819220210062374\surefirebooter9420990687070408424.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.11+9-LTS"/>
+    <property name="user.name" value="pilac"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1251"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Corretto-11.0.11.9.1"/>
+    <property name="localRepository" value="C:\Users\pilac\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/corretto/corretto-11/issues/"/>
+    <property name="java.io.tmpdir" value="C:\Users\pilac\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2020.3.2"/>
+    <property name="java.version" value="11.0.11"/>
+    <property name="user.dir" value="D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Users\pilac\.jdks\corretto-11.0.11\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Haskell\bin;C:\Program Files\Haskell Platform\2014.2.0.0\lib\extralibs\bin;C:\Program Files\Haskell Platform\2014.2.0.0\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\Haskell Platform\2014.2.0.0\mingw\bin;C:\Program Files\nodejs\;C:\Program Files\Kubernetes\Minikube;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\cygwin64\bin;C:\Users\pilac\AppData\Roaming\cabal\bin;C:\Users\pilac\AppData\Local\Microsoft\WindowsApps;C:\Users\pilac\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\pilac\AppData\Roaming\npm;C:\Users\pilac\AppData\Local\Programs\MiKTeX\miktex\bin\x64\;C:\Program Files\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64;C:\Program Files\Java\jdk1.8.0_281\bin;C:\Program Files\Graphviz\bin;."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Amazon.com Inc."/>
+    <property name="java.vm.version" value="11.0.11+9-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="add" classname="RationalTest" time="0"/>
+  <testcase name="div" classname="RationalTest" time="0"/>
+  <testcase name="sub" classname="RationalTest" time="0"/>
+  <testcase name="lсm" classname="RationalTest" time="0"/>
+  <testcase name="add1" classname="RationalTest" time="0"/>
+  <testcase name="add2" classname="RationalTest" time="0"/>
+  <testcase name="div1" classname="RationalTest" time="0"/>
+  <testcase name="div2" classname="RationalTest" time="0"/>
+  <testcase name="div3" classname="RationalTest" time="0"/>
+  <testcase name="sub1" classname="RationalTest" time="0"/>
+  <testcase name="sub2" classname="RationalTest" time="0"/>
+  <testcase name="sub3" classname="RationalTest" time="0"/>
+  <testcase name="lсm1" classname="RationalTest" time="0"/>
+  <testcase name="lсm2" classname="RationalTest" time="0"/>
+  <testcase name="isEqual" classname="RationalTest" time="0"/>
+</testsuite>
