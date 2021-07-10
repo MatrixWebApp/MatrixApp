@@ -1,0 +1,4 @@
+# Created at 2021-06-11T00:22:28.388
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Programming\IntellijIdea_Project\WebMatrixApp\MatrixLibrary\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+

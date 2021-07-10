@@ -1,0 +1,11 @@
+{
+  "name": "B",
+  "type": "Matrix",
+  "value": {
+  "mainMatrix":[
+            [{"numerator": 24,"denominator": 1},{"numerator": 34,"denominator": 1},{"numerator": 49,"denominator": 1}],
+            [{"numerator": 90,"denominator": 1},{"numerator": 76,"denominator": 1},{"numerator": 118,"denominator": 1}],
+            [{"numerator": 96,"denominator": 1},{"numerator": 118,"denominator": 1},{"numerator": 187,"denominator": 1}]
+          ]
+  }
+}
