@@ -1,1 +1,1 @@
-web:    java $JAVA_OPTS -jar target/MatrixLibrary-1.0-SNAPSHOT.jar --port $PORT target/*.war
+web:    java $JAVA_OPTS -jar target/MatrixLibrary-1.0-SNAPSHOT.jar --port 30000 target/*.jar
